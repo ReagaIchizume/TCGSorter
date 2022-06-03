@@ -8,7 +8,11 @@
 import Foundation
 import MTGSDKSwift
 
-public class MTGManager {
+public protocol MTGManager {
+  func fetchAll(completion: @escaping Magic.CardCompletion)
+}
+
+public class PrimaryMTGManager: MTGManager {
     private let magic = Magic()
 
     public func fetchAll(completion: @escaping Magic.CardCompletion) {

@@ -18,6 +18,7 @@
 		92BEE1A4284A450D00A85920 /* MTGManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1A3284A450D00A85920 /* MTGManager.swift */; };
 		92BEE1AF284A47AF00A85920 /* TCG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1AE284A47AF00A85920 /* TCG.swift */; };
 		92BEE1BA284A511A00A85920 /* MTGHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1B9284A511A00A85920 /* MTGHomePage.swift */; };
+		92BEE1CE284A5C1E00A85920 /* MTGCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1CD284A5C1E00A85920 /* MTGCardListView.swift */; };
 		9BB469D8A9EFE86B69482552 /* libPods-TCG Sorter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADEAF63E4409486F13BA271 /* libPods-TCG Sorter.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		92BEE1A3284A450D00A85920 /* MTGManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGManager.swift; sourceTree = "<group>"; };
 		92BEE1AE284A47AF00A85920 /* TCG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCG.swift; sourceTree = "<group>"; };
 		92BEE1B9284A511A00A85920 /* MTGHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGHomePage.swift; sourceTree = "<group>"; };
+		92BEE1CD284A5C1E00A85920 /* MTGCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGCardListView.swift; sourceTree = "<group>"; };
 		DB02DB85B60A91E683CCDA4E /* Pods-TCG Sorter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCG Sorter.debug.xcconfig"; path = "Target Support Files/Pods-TCG Sorter/Pods-TCG Sorter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +183,7 @@
 			children = (
 				92BEE1A3284A450D00A85920 /* MTGManager.swift */,
 				92BEE1B9284A511A00A85920 /* MTGHomePage.swift */,
+				92BEE1CD284A5C1E00A85920 /* MTGCardListView.swift */,
 			);
 			path = MTG;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92BEE16C27B2F39D00A85920 /* Persistence.swift in Sources */,
+				92BEE1CE284A5C1E00A85920 /* MTGCardListView.swift in Sources */,
 				92BEE16527B2F39500A85920 /* ContentView.swift in Sources */,
 				92BEE16327B2F39500A85920 /* TCG_SorterApp.swift in Sources */,
 				92BEE1A4284A450D00A85920 /* MTGManager.swift in Sources */,

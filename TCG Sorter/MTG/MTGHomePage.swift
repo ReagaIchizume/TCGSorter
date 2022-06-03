@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct MTGHomePage: View {
-    var body: some View {
-        Text("MTG Home Page ")
+  var body: some View {
+    VStack {
+      // Already in a navigationView by now, no need to make a new one.
+      NavigationLink(destination: MTGCardListView()) {
+        Text("Browse Cards")
+      }
     }
+  }
 }
 
 struct MTGHomePage_Previews: PreviewProvider {
-    static var previews: some View {
-        MTGHomePage()
-    }
+  static var previews: some View {
+    MTGHomePage()
+  }
 }
