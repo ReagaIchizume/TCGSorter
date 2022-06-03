@@ -1,16 +1,20 @@
 PODS:
   - MTGSDKSwift (1.1)
+  - SwiftHEXColors (1.4.1)
 
 DEPENDENCIES:
   - MTGSDKSwift
+  - SwiftHEXColors
 
 SPEC REPOS:
   trunk:
     - MTGSDKSwift
+    - SwiftHEXColors
 
 SPEC CHECKSUMS:
   MTGSDKSwift: 307f4d2960830c94b407ddb40af90ccb5ce1c9e6
+  SwiftHEXColors: 1cb6e5d55c52749aa33db8f088ac55eb71ca4c7f
 
-PODFILE CHECKSUM: 0fcc2625658e42ea54295b3f4e73db68ffb9bf89
+PODFILE CHECKSUM: fc3fd2cc2ccdf4e3e512b3f2d225417500796372
 
 COCOAPODS: 1.9.3
