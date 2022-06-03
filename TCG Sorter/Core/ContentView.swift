@@ -12,6 +12,7 @@ struct ContentView: View {
   @Environment(\.managedObjectContext) private var viewContext
   
   @ViewBuilder
+  /// Defines view to navigate to when clicking the game name
   private func destination(for game: TCG) -> some View {
     switch game {
       case .mtg:
@@ -20,9 +21,12 @@ struct ContentView: View {
   }
   
   var body: some View {
+    // Defines enclosed List as capable of navigation
     NavigationView {
       List (TCG.allCases) { game in
+        // Make a navigation link that pops up the home page for each game
         NavigationLink(destination: destination(for: game)) {
+          // View visible to user. Clicking it goes to destination
           Text(game.rawValue)
         }
       }

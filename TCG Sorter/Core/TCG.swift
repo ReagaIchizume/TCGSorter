@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Games supported by this app
 public enum TCG: String, CaseIterable, Identifiable {
   public var id: String { UUID().uuidString }
   case mtg = "Magic The Gathering"
