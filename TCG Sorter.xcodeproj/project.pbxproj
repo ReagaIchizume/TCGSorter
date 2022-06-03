@@ -15,6 +15,10 @@
 		92BEE16F27B2F39D00A85920 /* TCG_Sorter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE16D27B2F39D00A85920 /* TCG_Sorter.xcdatamodeld */; };
 		92BEE17A27B2F39D00A85920 /* TCG_SorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE17927B2F39D00A85920 /* TCG_SorterTests.swift */; };
 		92BEE18527B2F39D00A85920 /* TCG_SorterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE18427B2F39D00A85920 /* TCG_SorterUITests.swift */; };
+		92BEE1A4284A450D00A85920 /* MTGManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1A3284A450D00A85920 /* MTGManager.swift */; };
+		92BEE1AF284A47AF00A85920 /* TCG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1AE284A47AF00A85920 /* TCG.swift */; };
+		92BEE1BA284A511A00A85920 /* MTGHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1B9284A511A00A85920 /* MTGHomePage.swift */; };
+		9BB469D8A9EFE86B69482552 /* libPods-TCG Sorter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADEAF63E4409486F13BA271 /* libPods-TCG Sorter.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7ADEAF63E4409486F13BA271 /* libPods-TCG Sorter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TCG Sorter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FFA7C33C7790C6FF6732483 /* Pods-TCG Sorter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCG Sorter.release.xcconfig"; path = "Target Support Files/Pods-TCG Sorter/Pods-TCG Sorter.release.xcconfig"; sourceTree = "<group>"; };
 		92BEE15F27B2F39500A85920 /* TCG Sorter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TCG Sorter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BEE16227B2F39500A85920 /* TCG_SorterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCG_SorterApp.swift; sourceTree = "<group>"; };
 		92BEE16427B2F39500A85920 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +55,10 @@
 		92BEE18027B2F39D00A85920 /* TCG SorterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TCG SorterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BEE18427B2F39D00A85920 /* TCG_SorterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCG_SorterUITests.swift; sourceTree = "<group>"; };
 		92BEE18627B2F39D00A85920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92BEE1A3284A450D00A85920 /* MTGManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGManager.swift; sourceTree = "<group>"; };
+		92BEE1AE284A47AF00A85920 /* TCG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCG.swift; sourceTree = "<group>"; };
+		92BEE1B9284A511A00A85920 /* MTGHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGHomePage.swift; sourceTree = "<group>"; };
+		DB02DB85B60A91E683CCDA4E /* Pods-TCG Sorter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCG Sorter.debug.xcconfig"; path = "Target Support Files/Pods-TCG Sorter/Pods-TCG Sorter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BB469D8A9EFE86B69482552 /* libPods-TCG Sorter.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +87,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		074374C6009D2F23AF242463 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DB02DB85B60A91E683CCDA4E /* Pods-TCG Sorter.debug.xcconfig */,
+				8FFA7C33C7790C6FF6732483 /* Pods-TCG Sorter.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4CA734712B83C1CB20CC0978 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7ADEAF63E4409486F13BA271 /* libPods-TCG Sorter.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		92BEE15627B2F39500A85920 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +111,8 @@
 				92BEE17827B2F39D00A85920 /* TCG SorterTests */,
 				92BEE18327B2F39D00A85920 /* TCG SorterUITests */,
 				92BEE16027B2F39500A85920 /* Products */,
+				074374C6009D2F23AF242463 /* Pods */,
+				4CA734712B83C1CB20CC0978 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,12 +129,9 @@
 		92BEE16127B2F39500A85920 /* TCG Sorter */ = {
 			isa = PBXGroup;
 			children = (
-				92BEE16227B2F39500A85920 /* TCG_SorterApp.swift */,
-				92BEE16427B2F39500A85920 /* ContentView.swift */,
-				92BEE16627B2F39D00A85920 /* Assets.xcassets */,
-				92BEE16B27B2F39D00A85920 /* Persistence.swift */,
+				92BEE1A2284A44F500A85920 /* MTG */,
+				92BEE1A0284A44E000A85920 /* Core */,
 				92BEE17027B2F39D00A85920 /* Info.plist */,
-				92BEE16D27B2F39D00A85920 /* TCG_Sorter.xcdatamodeld */,
 				92BEE16827B2F39D00A85920 /* Preview Content */,
 			);
 			path = "TCG Sorter";
@@ -136,6 +163,28 @@
 			path = "TCG SorterUITests";
 			sourceTree = "<group>";
 		};
+		92BEE1A0284A44E000A85920 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				92BEE16427B2F39500A85920 /* ContentView.swift */,
+				92BEE16227B2F39500A85920 /* TCG_SorterApp.swift */,
+				92BEE16627B2F39D00A85920 /* Assets.xcassets */,
+				92BEE16B27B2F39D00A85920 /* Persistence.swift */,
+				92BEE16D27B2F39D00A85920 /* TCG_Sorter.xcdatamodeld */,
+				92BEE1AE284A47AF00A85920 /* TCG.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		92BEE1A2284A44F500A85920 /* MTG */ = {
+			isa = PBXGroup;
+			children = (
+				92BEE1A3284A450D00A85920 /* MTGManager.swift */,
+				92BEE1B9284A511A00A85920 /* MTGHomePage.swift */,
+			);
+			path = MTG;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +192,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92BEE18927B2F39E00A85920 /* Build configuration list for PBXNativeTarget "TCG Sorter" */;
 			buildPhases = (
+				599346C403059BD94A29CA32 /* [CP] Check Pods Manifest.lock */,
 				92BEE15B27B2F39500A85920 /* Sources */,
 				92BEE15C27B2F39500A85920 /* Frameworks */,
 				92BEE15D27B2F39500A85920 /* Resources */,
@@ -260,6 +310,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		599346C403059BD94A29CA32 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TCG Sorter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		92BEE15B27B2F39500A85920 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -268,6 +343,9 @@
 				92BEE16C27B2F39D00A85920 /* Persistence.swift in Sources */,
 				92BEE16527B2F39500A85920 /* ContentView.swift in Sources */,
 				92BEE16327B2F39500A85920 /* TCG_SorterApp.swift in Sources */,
+				92BEE1A4284A450D00A85920 /* MTGManager.swift in Sources */,
+				92BEE1AF284A47AF00A85920 /* TCG.swift in Sources */,
+				92BEE1BA284A511A00A85920 /* MTGHomePage.swift in Sources */,
 				92BEE16F27B2F39D00A85920 /* TCG_Sorter.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +500,7 @@
 		};
 		92BEE18A27B2F39E00A85920 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB02DB85B60A91E683CCDA4E /* Pods-TCG Sorter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,6 +522,7 @@
 		};
 		92BEE18B27B2F39E00A85920 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FFA7C33C7790C6FF6732483 /* Pods-TCG Sorter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

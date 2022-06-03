@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+public enum TCG: String, CaseIterable, Identifiable {
+  public var id: String { UUID().uuidString }
+  case mtg = "Magic The Gathering"
+}

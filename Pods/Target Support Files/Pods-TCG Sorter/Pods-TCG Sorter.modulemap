@@ -1,0 +1,6 @@
+module Pods_TCG_Sorter {
+  umbrella header "Pods-TCG Sorter-umbrella.h"
+
+  export *
+  module * { export * }
+}

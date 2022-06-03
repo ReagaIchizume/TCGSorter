@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import MTGSDKSwift
+
+public class MTGManager {
+    private let magic = Magic()
+
+    public func fetchAll(completion: @escaping Magic.CardCompletion) {
+        magic.fetchCards([], completion: completion)
+    }
+}

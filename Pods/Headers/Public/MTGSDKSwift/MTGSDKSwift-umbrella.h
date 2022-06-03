@@ -1,0 +1,1 @@
+../../../Target Support Files/MTGSDKSwift/MTGSDKSwift-umbrella.h
