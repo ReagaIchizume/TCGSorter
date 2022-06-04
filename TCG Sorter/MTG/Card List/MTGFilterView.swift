@@ -68,31 +68,37 @@ struct MTGFilterView: View {
         Spacer()
         TextField(filterTypeDictionary[.name] ?? "", text: $filteredName)
           .textFieldStyle(.roundedBorder)
+        Spacer()
       }
       VStack {
         HStack {
           Spacer()
           TextField(filterTypeDictionary[.cmc] ?? "", text: $filteredCMC).textFieldStyle(.roundedBorder)
           // TODO: Colors
+          Spacer()
         }
         HStack {
           Spacer()
           TextField(filterTypeDictionary[.supertypes] ?? "", text: $filteredTypes).textFieldStyle(.roundedBorder)
           TextField(filterTypeDictionary[.subtypes] ?? "", text: $filteredSubTypes).textFieldStyle(.roundedBorder)
+          Spacer()
         }
         HStack {
           Spacer()
           TextField(filterTypeDictionary[.text] ?? "", text: $filteredText).textFieldStyle(.roundedBorder)
+          Spacer()
         }
         HStack {
           Spacer()
           TextField(filterTypeDictionary[.rarity] ?? "", text: $filteredRarity).textFieldStyle(.roundedBorder)
           TextField(filterTypeDictionary[.set] ?? "", text: $filteredSet).textFieldStyle(.roundedBorder)
+          Spacer()
         }
         HStack {
           Spacer()
           TextField(filterTypeDictionary[.power] ?? "", text: $filteredPower).textFieldStyle(.roundedBorder)
           TextField(filterTypeDictionary[.toughness] ?? "", text: $filteredToughness).textFieldStyle(.roundedBorder)
+          Spacer()
         }
       }
       .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: expanded ? .none : 0)
