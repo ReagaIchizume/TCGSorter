@@ -54,13 +54,14 @@ extension Card {
 extension UIColor {
 
   // Force-unwrapping colors, they should never be nil.
-  static var mtgWhite: UIColor = UIColor(hexString: "#f3f4e7")!
-  static var mtgBlue: UIColor = UIColor(hexString: "#6683af")!
-  static var mtgBlack: UIColor = UIColor(hexString: "#4c4942")!
-  static var mtgRed: UIColor = UIColor(hexString: "#5e1106")!
-  static var mtgGreen: UIColor = UIColor(hexString: "#3c5c3a")!
-  static var mtgVoid: UIColor = UIColor(hexString: "#666869")!
-  static var mtgGold: UIColor = UIColor(hexString: "#e1d3a7")!
-  static var mtgLand: UIColor = UIColor(hexString: "#c6c4c2")!
+  static var mtgWhite: UIColor = #colorLiteral(red: 0.9219130278, green: 0.9196357757, blue: 0.8998702152, alpha: 1)
+  static var mtgBlue: UIColor = #colorLiteral(red: 0.747289598, green: 0.7984774709, blue: 0.8900906444, alpha: 1)
+  static var mtgBlack: UIColor = #colorLiteral(red: 0.6827152371, green: 0.6617467999, blue: 0.7114391923, alpha: 1)
+  static var mtgRed: UIColor = #colorLiteral(red: 0.9481737018, green: 0.8238952756, blue: 0.7686375976, alpha: 1)
+  static var mtgGreen: UIColor = #colorLiteral(red: 0.7158487439, green: 0.7849991918, blue: 0.760569036, alpha: 1)
+  static var mtgVoid: UIColor = #colorLiteral(red: 0.8703830838, green: 0.8739280105, blue: 0.9071862102, alpha: 1)
+  static var mtgGold: UIColor = #colorLiteral(red: 0.794490993, green: 0.7160476446, blue: 0.5352340937, alpha: 1)
+  static var mtgLand: UIColor = #colorLiteral(red: 0.7775816321, green: 0.7675945163, blue: 0.7596909404, alpha: 1)
+  static var mtgTextColor: UIColor = #colorLiteral(red: 0.3154934943, green: 0.2485016286, blue: 0.1023279503, alpha: 1)
 
 }

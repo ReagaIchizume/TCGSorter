@@ -8,21 +8,25 @@
 import SwiftUI
 import MTGSDKSwift
 
+class MTGFilterViewModel: ObservableObject {
+  // Textfield values
+  @Published var filteredName: String = ""
+  @Published var filteredCMC: String = ""
+  @Published var filteredColors: String = ""
+  @Published var filteredTypes: String = ""
+  @Published var filteredSubTypes: String = ""
+  @Published var filteredText: String = ""
+  @Published var filteredRarity: String = ""
+  @Published var filteredSet: String = ""
+  @Published var filteredPower: String = ""
+  @Published var filteredToughness: String = ""
+}
+
 struct MTGFilterView: View {
 
-  // Textfield values
-  @State var filteredName: String = ""
-  @State var filteredCMC: String = ""
-  @State var filteredColors: String = ""
-  @State var filteredTypes: String = ""
-  @State var filteredSubTypes: String = ""
-  @State var filteredText: String = ""
-  @State var filteredRarity: String = ""
-  @State var filteredSet: String = ""
-  @State var filteredPower: String = ""
-  @State var filteredToughness: String = ""
-
   @State private var expanded: Bool = false
+
+  @ObservedObject var viewModel: MTGFilterViewModel
 
   var filterTypeDictionary: [CardSearchParameter.CardQueryParameterType: String] = [
     .name: "Name",
@@ -39,16 +43,16 @@ struct MTGFilterView: View {
 
   /// Values being passed to query
   var filterStrings: [CardSearchParameter.CardQueryParameterType: String] {
-    [.name: filteredName,
-     .cmc: filteredCMC,
-     .colors: filteredColors,
-     .supertypes: filteredTypes,
-     .subtypes: filteredSubTypes,
-     .text: filteredText,
-     .rarity: filteredRarity,
-     .set: filteredSet,
-     .power: filteredPower,
-     .toughness: filteredToughness]
+    [.name: viewModel.filteredName,
+     .cmc: viewModel.filteredCMC,
+     .colors: viewModel.filteredColors,
+     .supertypes: viewModel.filteredTypes,
+     .subtypes: viewModel.filteredSubTypes,
+     .text: viewModel.filteredText,
+     .rarity: viewModel.filteredRarity,
+     .set: viewModel.filteredSet,
+     .power: viewModel.filteredPower,
+     .toughness: viewModel.filteredToughness]
   }
 
   /// Actual objects used by the query
@@ -66,38 +70,38 @@ struct MTGFilterView: View {
     VStack {
       HStack {
         Spacer()
-        TextField(filterTypeDictionary[.name] ?? "", text: $filteredName)
+        TextField(filterTypeDictionary[.name] ?? "", text: $viewModel.filteredName)
           .textFieldStyle(.roundedBorder)
         Spacer()
       }
       VStack {
         HStack {
           Spacer()
-          TextField(filterTypeDictionary[.cmc] ?? "", text: $filteredCMC).textFieldStyle(.roundedBorder)
+          TextField(filterTypeDictionary[.cmc] ?? "", text: $viewModel.filteredCMC).textFieldStyle(.roundedBorder)
           // TODO: Colors
           Spacer()
         }
         HStack {
           Spacer()
-          TextField(filterTypeDictionary[.supertypes] ?? "", text: $filteredTypes).textFieldStyle(.roundedBorder)
-          TextField(filterTypeDictionary[.subtypes] ?? "", text: $filteredSubTypes).textFieldStyle(.roundedBorder)
+          TextField(filterTypeDictionary[.supertypes] ?? "", text: $viewModel.filteredTypes).textFieldStyle(.roundedBorder)
+          TextField(filterTypeDictionary[.subtypes] ?? "", text: $viewModel.filteredSubTypes).textFieldStyle(.roundedBorder)
           Spacer()
         }
         HStack {
           Spacer()
-          TextField(filterTypeDictionary[.text] ?? "", text: $filteredText).textFieldStyle(.roundedBorder)
+          TextField(filterTypeDictionary[.text] ?? "", text: $viewModel.filteredText).textFieldStyle(.roundedBorder)
           Spacer()
         }
         HStack {
           Spacer()
-          TextField(filterTypeDictionary[.rarity] ?? "", text: $filteredRarity).textFieldStyle(.roundedBorder)
-          TextField(filterTypeDictionary[.set] ?? "", text: $filteredSet).textFieldStyle(.roundedBorder)
+          TextField(filterTypeDictionary[.rarity] ?? "", text: $viewModel.filteredRarity).textFieldStyle(.roundedBorder)
+          TextField(filterTypeDictionary[.set] ?? "", text: $viewModel.filteredSet).textFieldStyle(.roundedBorder)
           Spacer()
         }
         HStack {
           Spacer()
-          TextField(filterTypeDictionary[.power] ?? "", text: $filteredPower).textFieldStyle(.roundedBorder)
-          TextField(filterTypeDictionary[.toughness] ?? "", text: $filteredToughness).textFieldStyle(.roundedBorder)
+          TextField(filterTypeDictionary[.power] ?? "", text: $viewModel.filteredPower).textFieldStyle(.roundedBorder)
+          TextField(filterTypeDictionary[.toughness] ?? "", text: $viewModel.filteredToughness).textFieldStyle(.roundedBorder)
           Spacer()
         }
       }
@@ -114,6 +118,6 @@ struct MTGFilterView: View {
 
 struct MTGFilterView_Previews: PreviewProvider {
   static var previews: some View {
-    MTGFilterView()
+    MTGFilterView(viewModel: MTGFilterViewModel())
   }
 }
