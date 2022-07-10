@@ -16,6 +16,12 @@ struct MTGCardListView: View {
   
   var cardManager: MTGManager
   @State var cardList: [Card] = MTGCardListItem_Previews.testData
+
+  var filteredCardList: [Card] {
+    cardList.filter {
+      self.passesFilter(self.filterViewModel, $0)
+    }
+  }
   
   @StateObject var filterViewModel: MTGFilterViewModel = MTGFilterViewModel()
 
@@ -23,7 +29,7 @@ struct MTGCardListView: View {
     // Start from the whole list
     var totalList = cardList
     // Loop through filters the user has input
-    for filterType in filterViewModel.activeFilters {
+     for filterType in filterViewModel.activeFilters {
       switch CardSearchParameter.CardQueryParameterType(rawValue: filterType.name) {
         case .name:
           totalList = totalList.filter { $0.name?.contains(filterType.value) ?? false }
@@ -67,17 +73,15 @@ struct MTGCardListView: View {
       MTGFilterView()
       Spacer()
       if #available(iOS 15.0, *) {
-        List {
-          ForEach(cardList.filter { passesFilter(filterViewModel, $0) }) {
+        List(filteredCardList) {
             MTGCardListItem(card: $0)
               .listRowBackground(Color($0.cardColor))
               .listRowSeparator(.hidden)
-          }
         }
       } else {
         ScrollView {
           LazyVStack {
-            ForEach(cardList) {
+            ForEach(filteredCardList) {
               MTGCardListItem(card: $0)
                 .background(Color($0.cardColor))
             }
