@@ -11,7 +11,7 @@ struct MTGHomePage: View {
   var body: some View {
     VStack {
       // Already in a navigationView by now, no need to make a new one.
-      NavigationLink(destination: MTGCardListView(manager: PrimaryMTGManager())) {
+      NavigationLink(destination: MTGCardSearchView(cardManager: PrimaryMTGManager())) {
         Text("Browse Cards")
       }
     }

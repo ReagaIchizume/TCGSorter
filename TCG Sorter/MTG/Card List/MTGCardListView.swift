@@ -8,6 +8,8 @@
 import SwiftUI
 import MTGSDKSwift
 
+/// This list is for pre-existing card lists such as a "deck" or a box.
+/// A very similar list view will be used for searching. This is just for local
 struct MTGCardListView: View {
   
   init(manager: MTGManager) {
@@ -95,6 +97,14 @@ struct MTGCardListView: View {
 }
 
 class PreviewManager: MTGManager {
+  func fetchBy(search activeFilters: [CardSearchParameter], completion: @escaping Magic.CardCompletion) {
+    return
+  }
+  
+  func fetchImage(for card: Card, completion: @escaping Magic.CardImageCompletion) {
+    return
+  }
+  
 
   func fetchAll(completion: @escaping Magic.CardCompletion) {
     let cards = MTGCardListItem_Previews.testData
@@ -111,7 +121,7 @@ struct MTGCardListView_Previews: PreviewProvider {
       switch result {
         case .success(let cards):
           list.cardList = cards
-        case .error(let error):
+        case .error:
           break
       }
     }

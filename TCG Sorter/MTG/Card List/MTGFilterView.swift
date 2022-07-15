@@ -10,16 +10,56 @@ import MTGSDKSwift
 
 class MTGFilterViewModel: ObservableObject {
   // Textfield values
-  @Published var filteredName: String = ""
-  @Published var filteredCMC: String = ""
-  @Published var filteredColors: String = ""
-  @Published var filteredTypes: String = ""
-  @Published var filteredSubTypes: String = ""
-  @Published var filteredText: String = ""
-  @Published var filteredRarity: String = ""
-  @Published var filteredSet: String = ""
-  @Published var filteredPower: String = ""
-  @Published var filteredToughness: String = ""
+  @Published var filteredName: String = "" {
+    didSet {
+      typeAction(activeFilters)
+    }
+  }
+  @Published var filteredCMC: String = "" {
+    didSet {
+      typeAction(activeFilters)
+    }
+  }
+  @Published var filteredColors: String = "" {
+    didSet {
+      typeAction(activeFilters)
+    }
+  }
+  @Published var filteredTypes: String = "" {
+    didSet {
+      typeAction(activeFilters)
+    }
+  }
+  @Published var filteredSubTypes: String = "" {
+    didSet {
+      typeAction(activeFilters)
+    }
+  }
+  @Published var filteredText: String = "" {
+    didSet {
+      typeAction(activeFilters)
+    }
+  }
+  @Published var filteredRarity: String = "" {
+    didSet {
+      typeAction(activeFilters)
+    }
+  }
+  @Published var filteredSet: String = "" {
+    didSet {
+      typeAction(activeFilters)
+    }
+  }
+  @Published var filteredPower: String = "" {
+    didSet {
+      typeAction(activeFilters)
+    }
+  }
+  @Published var filteredToughness: String = "" {
+    didSet {
+      typeAction(activeFilters)
+    }
+  }
 
   var filterTypeDictionary: [CardSearchParameter.CardQueryParameterType: String] = [
       .name: "Name",
@@ -58,6 +98,12 @@ class MTGFilterViewModel: ObservableObject {
       }
     }
     return nonNilFilters
+  }
+
+  var typeAction: ([CardSearchParameter]) -> Void
+
+  init(typeAction: @escaping ([CardSearchParameter]) -> Void = { _ in }) {
+    self.typeAction = typeAction
   }
 }
 

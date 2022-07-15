@@ -17,7 +17,7 @@ enum MTGColor: Equatable {
       case 1:
         // Count over zero, should never be nil
         guard let identity = colors.first else { return .none}
-        switch identity {
+        switch identity.lowercased() {
           case "white":
             return .white
           case "blue":
