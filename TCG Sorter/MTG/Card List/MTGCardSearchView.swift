@@ -40,6 +40,7 @@ class MTGSearchModel: ObservableObject {
   }
 
   func search(parameters: [CardSearchParameter]) {
+    resetSearch()
     cardManager.fetchBy(search: parameters, completion: cardsearchCompletion)
   }
 }
@@ -49,9 +50,20 @@ class MTGSearchModel: ObservableObject {
 struct MTGCardSearchView: View {
   
   var cardManager: MTGManager
-  @ObservedObject var searchModel = MTGSearchModel()
+  @ObservedObject var searchModel: MTGSearchModel
   
-  @StateObject var filterViewModel: MTGFilterViewModel = MTGFilterViewModel()
+  @ObservedObject var filterViewModel: MTGFilterViewModel
+
+  init(cardManager: MTGManager) {
+    self.cardManager = cardManager
+    searchModel = MTGSearchModel()
+    filterViewModel = MTGFilterViewModel()
+    filterViewModel.typeAction = fetchByParameter(parameters:)
+  }
+
+  func fetchByParameter(parameters: [CardSearchParameter]) {
+    searchModel.search(parameters: parameters)
+  }
 
   var body: some View {
     VStack {

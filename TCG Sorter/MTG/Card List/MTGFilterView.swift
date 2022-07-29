@@ -65,7 +65,7 @@ class MTGFilterViewModel: ObservableObject {
       .name: "Name",
       .cmc: "Mana Value",
       .colors: "Colors",
-      .supertypes: "Type",
+      .type: "Type",
       .subtypes: "Sub-Types",
       .rarity: "Rarity",
       .text: "Card Text",
@@ -77,10 +77,10 @@ class MTGFilterViewModel: ObservableObject {
   var filterStrings: [CardSearchParameter.CardQueryParameterType: String] {
     [
       .name: filteredName,
-     .cmc: filteredCMC,
-     .colors: filteredColors,
-     .supertypes: filteredTypes,
-     .subtypes: filteredSubTypes,
+      .cmc: filteredCMC,
+      .colors: filteredColors,
+      .type: filteredTypes,
+      .subtypes: filteredSubTypes,
      .text: filteredText,
      .rarity: filteredRarity,
      .set: filteredSet,
@@ -130,7 +130,7 @@ struct MTGFilterView: View {
         }
         HStack {
           Spacer()
-          TextField(viewModel.filterTypeDictionary[.supertypes] ?? "", text: $viewModel.filteredTypes).textFieldStyle(.roundedBorder)
+          TextField(viewModel.filterTypeDictionary[.type] ?? "", text: $viewModel.filteredTypes).textFieldStyle(.roundedBorder)
           TextField(viewModel.filterTypeDictionary[.subtypes] ?? "", text: $viewModel.filteredSubTypes).textFieldStyle(.roundedBorder)
           Spacer()
         }
