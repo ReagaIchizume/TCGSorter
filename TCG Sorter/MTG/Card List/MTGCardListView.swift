@@ -97,6 +97,8 @@ struct MTGCardListView: View {
 }
 
 class PreviewManager: MTGManager {
+  var page = 1
+  
   func fetchBy(search activeFilters: [CardSearchParameter], completion: @escaping Magic.CardCompletion) {
     return
   }

@@ -12,13 +12,14 @@ protocol MTGManager {
   func fetchAll(completion: @escaping Magic.CardCompletion)
   func fetchBy(search activeFilters: [CardSearchParameter], completion: @escaping Magic.CardCompletion)
   func fetchImage(for card: Card, completion: @escaping Magic.CardImageCompletion)
+  var page: Int { get set }
 }
 
 class PrimaryMTGManager: MTGManager {
   private let magic = Magic()
-  public var maxPage = 1
-  private var configuration: MTGSearchConfiguration{
-    MTGSearchConfiguration(pageSize: 1000, pageTotal: maxPage)
+  var page = 1
+  private var configuration: MTGSearchConfiguration {
+    MTGSearchConfiguration(pageSize: 100, pageTotal: page)
   }
   
   func fetchAll(completion: @escaping Magic.CardCompletion) {

@@ -8,18 +8,30 @@
 import SwiftUI
 import MTGSDKSwift
 
-class MTGSearchModel {
+class MTGSearchModel: ObservableObject {
   private var cardManager: MTGManager
-  var cardList: [Card] = MTGCardListItem_Previews.testData
+  @Published var cardList: [Card] = []
+  var pageCount = 1 {
+    didSet {
+      cardManager.page = pageCount
+    }
+  }
 
   func cardsearchCompletion(result: Result<[Card]>) {
     switch result {
       case .success(let cards):
-        cardList = cards
+        DispatchQueue.main.async {
+          self.cardList += cards
+        }
       case .error(let error):
         // TODO: Handle errors
         print(error.localizedDescription)
     }
+  }
+
+  func resetSearch() {
+    pageCount = 1
+    cardList.removeAll()
   }
 
   init(manager: MTGManager = PrimaryMTGManager()) {
@@ -37,7 +49,7 @@ class MTGSearchModel {
 struct MTGCardSearchView: View {
   
   var cardManager: MTGManager
-  @State var searchModel = MTGSearchModel()
+  @ObservedObject var searchModel = MTGSearchModel()
   
   @StateObject var filterViewModel: MTGFilterViewModel = MTGFilterViewModel()
 
@@ -46,10 +58,18 @@ struct MTGCardSearchView: View {
       MTGFilterView()
       Spacer()
       if #available(iOS 15.0, *) {
-        List(searchModel.cardList) {
+        List {
+          ForEach(searchModel.cardList) {
             MTGCardListItem(card: $0)
               .listRowBackground(Color($0.cardColor))
               .listRowSeparator(.hidden)
+          }
+          Rectangle()
+            .frame(height: 0)
+            .onAppear() {
+              searchModel.pageCount += 1
+              searchModel.search(parameters: filterViewModel.activeFilters)
+            }
         }
       } else {
         ScrollView {
@@ -58,6 +78,12 @@ struct MTGCardSearchView: View {
               MTGCardListItem(card: $0)
                 .background(Color($0.cardColor))
             }
+            Rectangle()
+              .frame(height: 0)
+              .onAppear() {
+                searchModel.pageCount += 1
+                searchModel.search(parameters: filterViewModel.activeFilters)
+              }
           }
         }
       }
