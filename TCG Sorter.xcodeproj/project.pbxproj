@@ -23,6 +23,7 @@
 		92BEE1DB284A67E000A85920 /* MTGCardColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1DA284A67E000A85920 /* MTGCardColors.swift */; };
 		92BEE1E6284A772E00A85920 /* Card+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1E5284A772E00A85920 /* Card+Extensions.swift */; };
 		92BEE1EC284A7EF800A85920 /* MTGFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1EB284A7EF800A85920 /* MTGFilterView.swift */; };
+		92EC76FD28A6875900331F83 /* CheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92EC76FC28A6875900331F83 /* CheckBoxStyle.swift */; };
 		92F7FFB72881928F0023638E /* MTGCardSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F7FFB62881928F0023638E /* MTGCardSearchView.swift */; };
 		9BB469D8A9EFE86B69482552 /* libPods-TCG Sorter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADEAF63E4409486F13BA271 /* libPods-TCG Sorter.a */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		92BEE1DA284A67E000A85920 /* MTGCardColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGCardColors.swift; sourceTree = "<group>"; };
 		92BEE1E5284A772E00A85920 /* Card+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+Extensions.swift"; sourceTree = "<group>"; };
 		92BEE1EB284A7EF800A85920 /* MTGFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGFilterView.swift; sourceTree = "<group>"; };
+		92EC76FC28A6875900331F83 /* CheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxStyle.swift; sourceTree = "<group>"; };
 		92F7FFB62881928F0023638E /* MTGCardSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGCardSearchView.swift; sourceTree = "<group>"; };
 		DB02DB85B60A91E683CCDA4E /* Pods-TCG Sorter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCG Sorter.debug.xcconfig"; path = "Target Support Files/Pods-TCG Sorter/Pods-TCG Sorter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				92BEE16427B2F39500A85920 /* ContentView.swift */,
+				92EC76FB28A686F300331F83 /* Components */,
 				92BEE16227B2F39500A85920 /* TCG_SorterApp.swift */,
 				92BEE16627B2F39D00A85920 /* Assets.xcassets */,
 				92BEE16B27B2F39D00A85920 /* Persistence.swift */,
@@ -209,6 +212,14 @@
 				92F7FFB62881928F0023638E /* MTGCardSearchView.swift */,
 			);
 			path = "Card List";
+			sourceTree = "<group>";
+		};
+		92EC76FB28A686F300331F83 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				92EC76FC28A6875900331F83 /* CheckBoxStyle.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,6 +381,7 @@
 				92BEE1CE284A5C1E00A85920 /* MTGCardListView.swift in Sources */,
 				92F7FFB72881928F0023638E /* MTGCardSearchView.swift in Sources */,
 				92BEE16527B2F39500A85920 /* ContentView.swift in Sources */,
+				92EC76FD28A6875900331F83 /* CheckBoxStyle.swift in Sources */,
 				92BEE16327B2F39500A85920 /* TCG_SorterApp.swift in Sources */,
 				92BEE1E6284A772E00A85920 /* Card+Extensions.swift in Sources */,
 				92BEE1A4284A450D00A85920 /* MTGManager.swift in Sources */,

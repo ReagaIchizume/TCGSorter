@@ -20,7 +20,7 @@ class MTGFilterViewModel: ObservableObject {
       typeAction(activeFilters)
     }
   }
-  @Published var filteredColors: String = "" {
+  var filteredColors: String = "" {
     didSet {
       typeAction(activeFilters)
     }
@@ -61,6 +61,14 @@ class MTGFilterViewModel: ObservableObject {
     }
   }
 
+  // MARK: Colors
+  @Published fileprivate var whiteChecked: Bool = false
+  @Published fileprivate var blueChecked: Bool = false
+  @Published fileprivate var blackChecked: Bool = false
+  @Published fileprivate var redChecked: Bool = false
+  @Published fileprivate var greenChecked: Bool = false
+  @Published fileprivate var colorlessChecked: Bool = false
+
   var filterTypeDictionary: [CardSearchParameter.CardQueryParameterType: String] = [
       .name: "Name",
       .cmc: "Mana Value",
@@ -81,11 +89,11 @@ class MTGFilterViewModel: ObservableObject {
       .colors: filteredColors,
       .type: filteredTypes,
       .subtypes: filteredSubTypes,
-     .text: filteredText,
-     .rarity: filteredRarity,
-     .set: filteredSet,
-     .power: filteredPower,
-     .toughness: filteredToughness
+      .text: filteredText,
+      .rarity: filteredRarity,
+      .set: filteredSet,
+      .power: filteredPower,
+      .toughness: filteredToughness
     ]
   }
   
@@ -120,6 +128,86 @@ struct MTGFilterView: View {
         TextField(viewModel.filterTypeDictionary[.name] ?? "", text: $viewModel.filteredName)
           .textFieldStyle(.roundedBorder)
         Spacer()
+      }
+      VStack {
+        Text(viewModel.filterTypeDictionary[.colors] ?? "")
+        HStack {
+          Spacer()
+          Toggle("W", isOn: $viewModel.whiteChecked).toggleStyle(CheckBoxToggleStyle())
+            .onChange(of: viewModel.whiteChecked, perform: { whiteChecked in
+              if viewModel.colorlessChecked {
+                viewModel.colorlessChecked = false
+              }
+              if whiteChecked {
+                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? "white" : ",white"
+              } else {
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",white", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "white", with: "")
+              }
+            })
+          Toggle("U", isOn: $viewModel.blueChecked).toggleStyle(CheckBoxToggleStyle())
+            .onChange(of: viewModel.blueChecked, perform: { blueChecked in
+              if viewModel.colorlessChecked {
+                viewModel.colorlessChecked = false
+              }
+              if blueChecked {
+                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? "blue" : ",blue"
+              } else {
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",blue", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "blue", with: "")
+              }
+            })
+          Toggle("B", isOn: $viewModel.blackChecked).toggleStyle(CheckBoxToggleStyle())
+            .onChange(of: viewModel.blackChecked, perform: { blackChecked in
+              if viewModel.colorlessChecked {
+                viewModel.colorlessChecked = false
+              }
+              if blackChecked {
+                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? "black" : ",black"
+              } else {
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",black", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "black", with: "")
+              }
+            })
+          Toggle("R", isOn: $viewModel.redChecked).toggleStyle(CheckBoxToggleStyle())
+            .onChange(of: viewModel.redChecked, perform: { redChecked in
+              if viewModel.colorlessChecked {
+                viewModel.colorlessChecked = false
+              }
+              if redChecked {
+                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? "red" : ",red"
+              } else {
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",red", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "red", with: "")
+              }
+            })
+          Toggle("G", isOn: $viewModel.greenChecked).toggleStyle(CheckBoxToggleStyle())
+            .onChange(of: viewModel.greenChecked, perform: { greenChecked in
+              if viewModel.colorlessChecked {
+                viewModel.colorlessChecked = false
+              }
+              if greenChecked {
+                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? "green" : ",green"
+              } else {
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",green", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "green", with: "")
+              }
+            })
+          Toggle("Void", isOn: $viewModel.colorlessChecked).toggleStyle(CheckBoxToggleStyle())
+            .onChange(of: viewModel.colorlessChecked, perform: { colorlessChecked in
+              if colorlessChecked {
+                viewModel.whiteChecked = false
+                viewModel.blueChecked = false
+                viewModel.blackChecked = false
+                viewModel.redChecked = false
+                viewModel.greenChecked = false
+                viewModel.filteredColors = "colorless"
+              } else {
+                viewModel.filteredColors = ""
+              }
+            })
+          Spacer()
+        }
       }
       VStack {
         HStack {
