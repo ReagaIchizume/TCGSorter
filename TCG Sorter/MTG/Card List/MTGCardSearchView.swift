@@ -34,13 +34,15 @@ class MTGSearchModel: ObservableObject {
     cardList.removeAll()
   }
 
-  init(manager: MTGManager = PrimaryMTGManager()) {
+  init(manager: MTGManager) {
     self.cardManager = manager
     manager.fetchAll(completion: cardsearchCompletion)
   }
 
-  func search(parameters: [CardSearchParameter]) {
-    resetSearch()
+  func search(parameters: [CardSearchParameter], shouldResetSearch: Bool) {
+    if shouldResetSearch {
+      resetSearch()
+    }
     cardManager.fetchBy(search: parameters, completion: cardsearchCompletion)
   }
 }
@@ -49,20 +51,23 @@ class MTGSearchModel: ObservableObject {
 /// A very similar list view will be used for searching. This is just for local
 struct MTGCardSearchView: View {
   
-  var cardManager: MTGManager
   @ObservedObject var searchModel: MTGSearchModel
   
   @ObservedObject var filterViewModel: MTGFilterViewModel
 
-  init(cardManager: MTGManager) {
-    self.cardManager = cardManager
-    searchModel = MTGSearchModel()
+  init(cardManager: MTGManager = PrimaryMTGManager()) {
+    searchModel = MTGSearchModel(manager: cardManager)
     filterViewModel = MTGFilterViewModel()
     filterViewModel.typeAction = fetchByParameter(parameters:)
   }
 
   func fetchByParameter(parameters: [CardSearchParameter]) {
-    searchModel.search(parameters: parameters)
+    searchModel.search(parameters: parameters, shouldResetSearch: true)
+  }
+
+  private func fetchNextPage() {
+    searchModel.pageCount += 1
+    searchModel.search(parameters: filterViewModel.activeFilters, shouldResetSearch: false)
   }
 
   var body: some View {
@@ -78,9 +83,8 @@ struct MTGCardSearchView: View {
           }
           Rectangle()
             .frame(height: 0)
-            .onAppear() {
-              searchModel.pageCount += 1
-              searchModel.search(parameters: filterViewModel.activeFilters)
+            .task {
+              fetchNextPage()
             }
         }
       } else {
@@ -93,8 +97,7 @@ struct MTGCardSearchView: View {
             Rectangle()
               .frame(height: 0)
               .onAppear() {
-                searchModel.pageCount += 1
-                searchModel.search(parameters: filterViewModel.activeFilters)
+                fetchNextPage()
               }
           }
         }

@@ -87,6 +87,11 @@ struct MTGCardListView: View {
               MTGCardListItem(card: $0)
                 .background(Color($0.cardColor))
             }
+            Spacer()
+              .frame(width: 0, height: 0, alignment: .center)
+              .onAppear() {
+                // TODO: Set next page
+              }
           }
         }
       }
