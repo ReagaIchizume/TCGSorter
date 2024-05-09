@@ -6,24 +6,20 @@
 //
 
 import SwiftUI
-import MTGSDKSwift
+import ScryfallKit
 
 class MTGSearchModel: ObservableObject {
-  private var cardManager: MTGManager
+  private var cardManager: ScryfallClient = ScryfallClient(networkLogLevel: .minimal)
   @Published var cardList: [Card] = []
-  var pageCount = 1 {
-    didSet {
-      cardManager.page = pageCount
-    }
-  }
+  var pageCount = 1
 
-  func cardsearchCompletion(result: Result<[Card]>) {
+  func cardsearchCompletion(result: Result<ObjectList<Card>, Error>) {
     switch result {
       case .success(let cards):
         DispatchQueue.main.async {
-          self.cardList += cards
+          self.cardList += cards.data
         }
-      case .error(let error):
+      case .failure(let error):
         // TODO: Handle errors
         print(error.localizedDescription)
     }
@@ -34,16 +30,15 @@ class MTGSearchModel: ObservableObject {
     cardList.removeAll()
   }
 
-  init(manager: MTGManager) {
-    self.cardManager = manager
-    manager.fetchAll(completion: cardsearchCompletion)
+  init() {
+    cardManager.searchCards(filters: [], completion: cardsearchCompletion(result:))
   }
 
-  func search(parameters: [CardSearchParameter], shouldResetSearch: Bool) {
+  func search(parameters: [CardFieldFilter], shouldResetSearch: Bool) {
     if shouldResetSearch {
       resetSearch()
     }
-    cardManager.fetchBy(search: parameters, completion: cardsearchCompletion)
+    cardManager.searchCards(filters: parameters, completion: cardsearchCompletion(result:))
   }
 }
 
@@ -55,19 +50,14 @@ struct MTGCardSearchView: View {
   
   @ObservedObject var filterViewModel: MTGFilterViewModel
 
-  init(cardManager: MTGManager = PrimaryMTGManager()) {
-    searchModel = MTGSearchModel(manager: cardManager)
+  init() {
+    searchModel = MTGSearchModel()
     filterViewModel = MTGFilterViewModel()
     filterViewModel.typeAction = fetchByParameter(parameters:)
   }
 
-  func fetchByParameter(parameters: [CardSearchParameter]) {
+  func fetchByParameter(parameters: [CardFieldFilter]) {
     searchModel.search(parameters: parameters, shouldResetSearch: true)
-  }
-
-  private func fetchNextPage() {
-    searchModel.pageCount += 1
-    searchModel.search(parameters: filterViewModel.activeFilters, shouldResetSearch: false)
   }
 
   var body: some View {
@@ -81,11 +71,6 @@ struct MTGCardSearchView: View {
               .listRowBackground(Color($0.cardColor))
               .listRowSeparator(.hidden)
           }
-          Rectangle()
-            .frame(height: 0)
-            .task {
-              fetchNextPage()
-            }
         }
       } else {
         ScrollView {
@@ -94,11 +79,6 @@ struct MTGCardSearchView: View {
               MTGCardListItem(card: $0)
                 .background(Color($0.cardColor))
             }
-            Rectangle()
-              .frame(height: 0)
-              .onAppear() {
-                fetchNextPage()
-              }
           }
         }
       }
@@ -110,16 +90,8 @@ struct MTGCardSearchView: View {
 
 struct MTGCardSearchView_Previews: PreviewProvider {
   static func setUpPreview() -> some View {
-    let previewManager = PreviewManager()
-    let list = MTGCardListView(manager: previewManager)
-    previewManager.fetchAll { result in
-      switch result {
-        case .success(let cards):
-          list.cardList = cards
-        case .error:
-          break
-      }
-    }
+    let list = MTGCardListView()
+    list.cardList = MTGCardListItem_Previews.testData
     return list
   }
     static var previews: some View {

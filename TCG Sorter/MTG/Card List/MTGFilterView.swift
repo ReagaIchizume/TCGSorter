@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MTGSDKSwift
+import ScryfallKit
 
 class MTGFilterViewModel: ObservableObject {
   // Textfield values
@@ -69,48 +69,54 @@ class MTGFilterViewModel: ObservableObject {
   @Published fileprivate var greenChecked: Bool = false
   @Published fileprivate var colorlessChecked: Bool = false
 
-  var filterTypeDictionary: [CardSearchParameter.CardQueryParameterType: String] = [
-      .name: "Name",
-      .cmc: "Mana Value",
-      .colors: "Colors",
-      .type: "Type",
-      .subtypes: "Sub-Types",
-      .rarity: "Rarity",
-      .text: "Card Text",
-      .set: "Set",
-      .power: "Power",
-      .toughness: "Toughness"
-    ]
   /// Values being passed to query
-  var filterStrings: [CardSearchParameter.CardQueryParameterType: String] {
+  var cardFilters: [CardFieldFilter] {
     [
-      .name: filteredName,
-      .cmc: filteredCMC,
-      .colors: filteredColors,
-      .type: filteredTypes,
-      .subtypes: filteredSubTypes,
-      .text: filteredText,
-      .rarity: filteredRarity,
-      .set: filteredSet,
-      .power: filteredPower,
-      .toughness: filteredToughness
+      .name(filteredName),
+      .cmc(filteredCMC, .equal),
+      .colors(filteredColors, ComparisonType.including),
+      .type(filteredTypes),
+      .fullOracleText(filteredText),
+      .rarity(filteredRarity, .equal),
+      .set(filteredSet),
+      .power(filteredPower, .equal),
+      .toughness(filteredToughness, .equal)
     ]
   }
   
   /// Actual objects used by the query
-  var activeFilters: [CardSearchParameter] {
-    var nonNilFilters: [CardSearchParameter] = []
-    for (key, value) in filterStrings {
-      if !value.isEmpty {
-        nonNilFilters.append(CardSearchParameter(parameterType: key, value: value))
+  var activeFilters: [CardFieldFilter] {
+    var nonNilFilters: [CardFieldFilter] = []
+    for filter in cardFilters {
+      switch filter {
+        case .name(let name) where !name.isEmpty:
+          nonNilFilters.append(filter)
+        case .cmc(let cmc, _) where !cmc.isEmpty:
+          nonNilFilters.append(filter)
+        case .colors(let colors, _) where !colors.isEmpty:
+          nonNilFilters.append(filter)
+        case .type(let type) where !type.isEmpty:
+          nonNilFilters.append(filter)
+        case .fullOracleText(let text) where !text.isEmpty:
+          nonNilFilters.append(filter)
+        case .rarity(let rarity, _) where !rarity.isEmpty:
+          nonNilFilters.append(filter)
+        case .set(let set) where !set.isEmpty:
+          nonNilFilters.append(filter)
+        case .power(let power, _) where !power.isEmpty:
+          nonNilFilters.append(filter)
+        case .toughness(let toughness, _) where !toughness.isEmpty:
+          nonNilFilters.append(filter)
+        default:
+          break
       }
     }
     return nonNilFilters
   }
 
-  var typeAction: ([CardSearchParameter]) -> Void
+  var typeAction: ([CardFieldFilter]) -> Void
 
-  init(typeAction: @escaping ([CardSearchParameter]) -> Void = { _ in }) {
+  init(typeAction: @escaping ([CardFieldFilter]) -> Void = { _ in }) {
     self.typeAction = typeAction
   }
 }
@@ -125,15 +131,15 @@ struct MTGFilterView: View {
     VStack {
       HStack {
         Spacer()
-        TextField(viewModel.filterTypeDictionary[.name] ?? "", text: $viewModel.filteredName)
+        TextField("Name", text: $viewModel.filteredName)
           .textFieldStyle(.roundedBorder)
         Spacer()
       }
       VStack {
-        Text(viewModel.filterTypeDictionary[.colors] ?? "")
+        Text("Colors")
         HStack {
           Spacer()
-          Toggle("W", isOn: $viewModel.whiteChecked).toggleStyle(CheckBoxToggleStyle())
+          Toggle(Card.Color.W.rawValue, isOn: $viewModel.whiteChecked).toggleStyle(CheckBoxToggleStyle())
             .onChange(of: viewModel.whiteChecked, perform: { whiteChecked in
               if viewModel.colorlessChecked {
                 viewModel.colorlessChecked = false
@@ -145,7 +151,7 @@ struct MTGFilterView: View {
                 viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "white", with: "")
               }
             })
-          Toggle("U", isOn: $viewModel.blueChecked).toggleStyle(CheckBoxToggleStyle())
+          Toggle(Card.Color.U.rawValue, isOn: $viewModel.blueChecked).toggleStyle(CheckBoxToggleStyle())
             .onChange(of: viewModel.blueChecked, perform: { blueChecked in
               if viewModel.colorlessChecked {
                 viewModel.colorlessChecked = false
@@ -157,7 +163,7 @@ struct MTGFilterView: View {
                 viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "blue", with: "")
               }
             })
-          Toggle("B", isOn: $viewModel.blackChecked).toggleStyle(CheckBoxToggleStyle())
+          Toggle(Card.Color.B.rawValue, isOn: $viewModel.blackChecked).toggleStyle(CheckBoxToggleStyle())
             .onChange(of: viewModel.blackChecked, perform: { blackChecked in
               if viewModel.colorlessChecked {
                 viewModel.colorlessChecked = false
@@ -169,7 +175,7 @@ struct MTGFilterView: View {
                 viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "black", with: "")
               }
             })
-          Toggle("R", isOn: $viewModel.redChecked).toggleStyle(CheckBoxToggleStyle())
+          Toggle(Card.Color.R.rawValue, isOn: $viewModel.redChecked).toggleStyle(CheckBoxToggleStyle())
             .onChange(of: viewModel.redChecked, perform: { redChecked in
               if viewModel.colorlessChecked {
                 viewModel.colorlessChecked = false
@@ -181,7 +187,7 @@ struct MTGFilterView: View {
                 viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "red", with: "")
               }
             })
-          Toggle("G", isOn: $viewModel.greenChecked).toggleStyle(CheckBoxToggleStyle())
+          Toggle(Card.Color.G.rawValue, isOn: $viewModel.greenChecked).toggleStyle(CheckBoxToggleStyle())
             .onChange(of: viewModel.greenChecked, perform: { greenChecked in
               if viewModel.colorlessChecked {
                 viewModel.colorlessChecked = false
@@ -193,7 +199,7 @@ struct MTGFilterView: View {
                 viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "green", with: "")
               }
             })
-          Toggle("Void", isOn: $viewModel.colorlessChecked).toggleStyle(CheckBoxToggleStyle())
+          Toggle(Card.Color.C.rawValue, isOn: $viewModel.colorlessChecked).toggleStyle(CheckBoxToggleStyle())
             .onChange(of: viewModel.colorlessChecked, perform: { colorlessChecked in
               if colorlessChecked {
                 viewModel.whiteChecked = false
@@ -212,31 +218,30 @@ struct MTGFilterView: View {
       VStack {
         HStack {
           Spacer()
-          TextField(viewModel.filterTypeDictionary[.cmc] ?? "", text: $viewModel.filteredCMC).textFieldStyle(.roundedBorder)
+          TextField("Mana Value", text: $viewModel.filteredCMC).textFieldStyle(.roundedBorder)
           // TODO: Colors
           Spacer()
         }
         HStack {
           Spacer()
-          TextField(viewModel.filterTypeDictionary[.type] ?? "", text: $viewModel.filteredTypes).textFieldStyle(.roundedBorder)
-          TextField(viewModel.filterTypeDictionary[.subtypes] ?? "", text: $viewModel.filteredSubTypes).textFieldStyle(.roundedBorder)
+          TextField("Type", text: $viewModel.filteredTypes).textFieldStyle(.roundedBorder)
           Spacer()
         }
         HStack {
           Spacer()
-          TextField(viewModel.filterTypeDictionary[.text] ?? "", text: $viewModel.filteredText).textFieldStyle(.roundedBorder)
+          TextField("Rules Text", text: $viewModel.filteredText).textFieldStyle(.roundedBorder)
           Spacer()
         }
         HStack {
           Spacer()
-          TextField(viewModel.filterTypeDictionary[.rarity] ?? "", text: $viewModel.filteredRarity).textFieldStyle(.roundedBorder)
-          TextField(viewModel.filterTypeDictionary[.set] ?? "", text: $viewModel.filteredSet).textFieldStyle(.roundedBorder)
+          TextField("Rarity", text: $viewModel.filteredRarity).textFieldStyle(.roundedBorder)
+          TextField("Set", text: $viewModel.filteredSet).textFieldStyle(.roundedBorder)
           Spacer()
         }
         HStack {
           Spacer()
-          TextField(viewModel.filterTypeDictionary[.power] ?? "", text: $viewModel.filteredPower).textFieldStyle(.roundedBorder)
-          TextField(viewModel.filterTypeDictionary[.toughness] ?? "", text: $viewModel.filteredToughness).textFieldStyle(.roundedBorder)
+          TextField("Power", text: $viewModel.filteredPower).textFieldStyle(.roundedBorder)
+          TextField("Toughness", text: $viewModel.filteredToughness).textFieldStyle(.roundedBorder)
           Spacer()
         }
       }

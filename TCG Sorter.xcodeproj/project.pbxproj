@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9273514F2BEBF9F400B98649 /* ScryfallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9273514E2BEBF9F400B98649 /* ScryfallKit */; };
 		92BEE16327B2F39500A85920 /* TCG_SorterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE16227B2F39500A85920 /* TCG_SorterApp.swift */; };
 		92BEE16527B2F39500A85920 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE16427B2F39500A85920 /* ContentView.swift */; };
 		92BEE16727B2F39D00A85920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92BEE16627B2F39D00A85920 /* Assets.xcassets */; };
@@ -15,7 +16,6 @@
 		92BEE16F27B2F39D00A85920 /* TCG_Sorter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE16D27B2F39D00A85920 /* TCG_Sorter.xcdatamodeld */; };
 		92BEE17A27B2F39D00A85920 /* TCG_SorterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE17927B2F39D00A85920 /* TCG_SorterTests.swift */; };
 		92BEE18527B2F39D00A85920 /* TCG_SorterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE18427B2F39D00A85920 /* TCG_SorterUITests.swift */; };
-		92BEE1A4284A450D00A85920 /* MTGManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1A3284A450D00A85920 /* MTGManager.swift */; };
 		92BEE1AF284A47AF00A85920 /* TCG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1AE284A47AF00A85920 /* TCG.swift */; };
 		92BEE1BA284A511A00A85920 /* MTGHomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1B9284A511A00A85920 /* MTGHomePage.swift */; };
 		92BEE1CE284A5C1E00A85920 /* MTGCardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE1CD284A5C1E00A85920 /* MTGCardListView.swift */; };
@@ -62,7 +62,6 @@
 		92BEE18027B2F39D00A85920 /* TCG SorterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TCG SorterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BEE18427B2F39D00A85920 /* TCG_SorterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCG_SorterUITests.swift; sourceTree = "<group>"; };
 		92BEE18627B2F39D00A85920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		92BEE1A3284A450D00A85920 /* MTGManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGManager.swift; sourceTree = "<group>"; };
 		92BEE1AE284A47AF00A85920 /* TCG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCG.swift; sourceTree = "<group>"; };
 		92BEE1B9284A511A00A85920 /* MTGHomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGHomePage.swift; sourceTree = "<group>"; };
 		92BEE1CD284A5C1E00A85920 /* MTGCardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGCardListView.swift; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BB469D8A9EFE86B69482552 /* libPods-TCG Sorter.a in Frameworks */,
+				9273514F2BEBF9F400B98649 /* ScryfallKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +205,6 @@
 		92BEE1EA284A7ECF00A85920 /* Card List */ = {
 			isa = PBXGroup;
 			children = (
-				92BEE1A3284A450D00A85920 /* MTGManager.swift */,
 				92BEE1CD284A5C1E00A85920 /* MTGCardListView.swift */,
 				92BEE1D5284A5F5500A85920 /* MTGCardListItem.swift */,
 				92BEE1EB284A7EF800A85920 /* MTGFilterView.swift */,
@@ -239,6 +238,9 @@
 			dependencies = (
 			);
 			name = "TCG Sorter";
+			packageProductDependencies = (
+				9273514E2BEBF9F400B98649 /* ScryfallKit */,
+			);
 			productName = "TCG Sorter";
 			productReference = 92BEE15F27B2F39500A85920 /* TCG Sorter.app */;
 			productType = "com.apple.product-type.application";
@@ -310,6 +312,9 @@
 				Base,
 			);
 			mainGroup = 92BEE15627B2F39500A85920;
+			packageReferences = (
+				9273514D2BEBF9F400B98649 /* XCRemoteSwiftPackageReference "ScryfallKit" */,
+			);
 			productRefGroup = 92BEE16027B2F39500A85920 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -384,7 +389,6 @@
 				92EC76FD28A6875900331F83 /* CheckBoxStyle.swift in Sources */,
 				92BEE16327B2F39500A85920 /* TCG_SorterApp.swift in Sources */,
 				92BEE1E6284A772E00A85920 /* Card+Extensions.swift in Sources */,
-				92BEE1A4284A450D00A85920 /* MTGManager.swift in Sources */,
 				92BEE1AF284A47AF00A85920 /* TCG.swift in Sources */,
 				92BEE1DB284A67E000A85920 /* MTGCardColors.swift in Sources */,
 				92BEE1BA284A511A00A85920 /* MTGHomePage.swift in Sources */,
@@ -706,6 +710,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9273514D2BEBF9F400B98649 /* XCRemoteSwiftPackageReference "ScryfallKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JacobHearst/ScryfallKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9273514E2BEBF9F400B98649 /* ScryfallKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9273514D2BEBF9F400B98649 /* XCRemoteSwiftPackageReference "ScryfallKit" */;
+			productName = ScryfallKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		92BEE16D27B2F39D00A85920 /* TCG_Sorter.xcdatamodeld */ = {

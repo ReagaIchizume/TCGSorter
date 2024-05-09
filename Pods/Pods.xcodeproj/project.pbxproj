@@ -3,83 +3,49 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11BA863EFACA98B24A7815D22DCC7C4B /* Pods-TCG Sorter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB8098CF72C147960067B7291D20BF7 /* Pods-TCG Sorter-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1ED5A324D160CE66EBD23B5F174099BF /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC6C048451E1426412F48251AADC2FD /* CardSet.swift */; };
-		219D44363BE87A91805FBB8D98589EE6 /* SearchParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109DD245C5E5D81970F5F85654A104E /* SearchParameter.swift */; };
-		2AC7CC78C7F246C1BF4D435860380158 /* SwiftHEXColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF99C0734F983FAB61B9E851DED301D /* SwiftHEXColors-dummy.m */; };
-		448C4FFDA8F0324AA4E434A273E62F97 /* SwiftHEXColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7202AE0060CFEE3641E47333079F007A /* SwiftHEXColors.swift */; };
-		486A87C5F6D4054966879A7128D9B9CA /* MTGAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D541DAC3937617F5DBF8B8088F0187 /* MTGAPIService.swift */; };
-		49298E1CE77C23BD432C2CA24F8A32B0 /* MTGSDKSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FA68AE5F92C5EBF9B4EC8A9AE0D5AA57 /* MTGSDKSwift-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		4A2615A9B4B8E082A0E5E263F7088685 /* MTGSearchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230E77AC8944EBC80774F55EC9ABD95 /* MTGSearchConfiguration.swift */; };
-		7EE1D536C14AE542ADFAD2AF9B0C37CC /* Pods-TCG Sorter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FE8B5CDFE483F4C22E1B6E280063D /* Pods-TCG Sorter-dummy.m */; };
-		83EE030A0E7D608D38FAC9A504A8D6BD /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942187F3C73FA4965B60C688ACDC3B75 /* Card.swift */; };
-		92DE138393F03DB42389F1E9F387B026 /* MTGSDKSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C21252F8B774D6EAC1E0E157F8A36265 /* MTGSDKSwift-dummy.m */; };
-		9D25F87D4EC0EF1BED1310EADD957931 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09F935BE883D018B5114F8D607D617B /* Constants.swift */; };
-		B54F868C638CDD438A07BEFD23E727A5 /* SwiftHEXColors-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EE1C8EC87C2CD1E8F698B72D3BD8CF1E /* SwiftHEXColors-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D26188E325C079F0FE95B75F830F510A /* URLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B0B407DF5AC8312A16311CC38E1839 /* URLBuilder.swift */; };
-		E9AAC6DBC72BD9F497552820CE92D549 /* MagicalCardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE481A0B55061D4697706CA977D5B52D /* MagicalCardManager.swift */; };
-		EC7173206C5A405532B91929B0E99BC4 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFABEE4B9B5447EDB643B979D0A1D9D1 /* NetworkError.swift */; };
+		2AC7CC78C7F246C1BF4D435860380158 /* SwiftHEXColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B382B89DA82BEB7942AB656A360868A0 /* SwiftHEXColors-dummy.m */; };
+		448C4FFDA8F0324AA4E434A273E62F97 /* SwiftHEXColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43301AA5719D757CFEB0CB28A698EAEC /* SwiftHEXColors.swift */; };
+		6DB4F8153944F2BFE5D750B36BC4FF2B /* Pods-TCG Sorter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BB8098CF72C147960067B7291D20BF7 /* Pods-TCG Sorter-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B54F868C638CDD438A07BEFD23E727A5 /* SwiftHEXColors-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CD1AAEFE734368A80D06E003C1565F06 /* SwiftHEXColors-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		EFE17EF062991F5BF0F0763025E020B8 /* Pods-TCG Sorter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF2FE8B5CDFE483F4C22E1B6E280063D /* Pods-TCG Sorter-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		01365C9548D68F9EF6E945072F94423A /* PBXContainerItemProxy */ = {
+		DC80BBC55D61C9A816D0B9E09ECE363E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FBCA5614C6DE80E95DB0A68DF224D729;
 			remoteInfo = SwiftHEXColors;
 		};
-		1EE9AE0B835AEB5432A77B0B933BBCDE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BBA5459258F5ED721B7DD7457FE66D2D;
-			remoteInfo = MTGSDKSwift;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0C5AED09D9F29C1E7B22C2E8AC002988 /* Pods-TCG Sorter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TCG Sorter.modulemap"; sourceTree = "<group>"; };
 		0C636E923A570394659F80869F8CBCE0 /* Pods-TCG Sorter-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TCG Sorter-acknowledgements.plist"; sourceTree = "<group>"; };
-		16B5682748B38EECF5532E95BD8BEB7B /* MTGSDKSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MTGSDKSwift-prefix.pch"; sourceTree = "<group>"; };
-		43528ECE2ABB6CA7759477F79B86008A /* MTGSDKSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MTGSDKSwift.debug.xcconfig; sourceTree = "<group>"; };
-		66D541DAC3937617F5DBF8B8088F0187 /* MTGAPIService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MTGAPIService.swift; path = MTGSDKSwift/MTGAPIService.swift; sourceTree = "<group>"; };
-		6B69A2912825D466A442CF511C73AAE5 /* SwiftHEXColors.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftHEXColors.modulemap; sourceTree = "<group>"; };
+		43301AA5719D757CFEB0CB28A698EAEC /* SwiftHEXColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftHEXColors.swift; path = Sources/SwiftHEXColors/SwiftHEXColors.swift; sourceTree = "<group>"; };
+		629645FB8764F7375442C781A33F1DF0 /* SwiftHEXColors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftHEXColors.release.xcconfig; sourceTree = "<group>"; };
 		6BB8098CF72C147960067B7291D20BF7 /* Pods-TCG Sorter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TCG Sorter-umbrella.h"; sourceTree = "<group>"; };
-		7202AE0060CFEE3641E47333079F007A /* SwiftHEXColors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftHEXColors.swift; path = Sources/SwiftHEXColors/SwiftHEXColors.swift; sourceTree = "<group>"; };
-		780B395A7A5D5048E84D3C9D73656E0C /* libMTGSDKSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMTGSDKSwift.a; path = libMTGSDKSwift.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		82542A482BA9A5A245A197D81AB4F9B3 /* SwiftHEXColors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftHEXColors.debug.xcconfig; sourceTree = "<group>"; };
+		6E52930EAD61DF561F169D1E223C880F /* SwiftHEXColors.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftHEXColors.modulemap; sourceTree = "<group>"; };
 		8F11822DBB7B01777292D241046A91DC /* Pods-TCG Sorter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TCG Sorter.debug.xcconfig"; sourceTree = "<group>"; };
 		9145D266396D5266190C0162B78413A0 /* Pods-TCG Sorter-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TCG Sorter-acknowledgements.markdown"; sourceTree = "<group>"; };
-		942187F3C73FA4965B60C688ACDC3B75 /* Card.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Card.swift; path = MTGSDKSwift/Models/Card.swift; sourceTree = "<group>"; };
-		9C4D0BDDEB1B6D2D489DF9AF0D7FCD19 /* MTGSDKSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MTGSDKSwift.modulemap; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F1A722B6C67EDDF589CAD52E74EC4FC /* MTGSDKSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MTGSDKSwift.release.xcconfig; sourceTree = "<group>"; };
-		A230E77AC8944EBC80774F55EC9ABD95 /* MTGSearchConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MTGSearchConfiguration.swift; path = MTGSDKSwift/Models/MTGSearchConfiguration.swift; sourceTree = "<group>"; };
-		AFABEE4B9B5447EDB643B979D0A1D9D1 /* NetworkError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkError.swift; path = MTGSDKSwift/Models/NetworkError.swift; sourceTree = "<group>"; };
+		B382B89DA82BEB7942AB656A360868A0 /* SwiftHEXColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftHEXColors-dummy.m"; sourceTree = "<group>"; };
 		BEBCEF8662E990EBAE2653AD1EAA8E64 /* Pods-TCG Sorter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TCG Sorter.release.xcconfig"; sourceTree = "<group>"; };
-		C21252F8B774D6EAC1E0E157F8A36265 /* MTGSDKSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MTGSDKSwift-dummy.m"; sourceTree = "<group>"; };
-		CCC6C048451E1426412F48251AADC2FD /* CardSet.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardSet.swift; path = MTGSDKSwift/Models/CardSet.swift; sourceTree = "<group>"; };
-		CD4B4C41971AFD6DAF6231CB085F347F /* SwiftHEXColors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftHEXColors.release.xcconfig; sourceTree = "<group>"; };
+		CD1AAEFE734368A80D06E003C1565F06 /* SwiftHEXColors-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftHEXColors-umbrella.h"; sourceTree = "<group>"; };
 		DD500B7290B0BC77222FABF12BC3C528 /* libPods-TCG Sorter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-TCG Sorter.a"; path = "libPods-TCG Sorter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE481A0B55061D4697706CA977D5B52D /* MagicalCardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MagicalCardManager.swift; path = MTGSDKSwift/MagicalCardManager.swift; sourceTree = "<group>"; };
-		DEF99C0734F983FAB61B9E851DED301D /* SwiftHEXColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftHEXColors-dummy.m"; sourceTree = "<group>"; };
-		E09F935BE883D018B5114F8D607D617B /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = MTGSDKSwift/Models/Constants.swift; sourceTree = "<group>"; };
-		EE1C8EC87C2CD1E8F698B72D3BD8CF1E /* SwiftHEXColors-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftHEXColors-umbrella.h"; sourceTree = "<group>"; };
+		DE6DCAA27D0E00D37D8A4ABF7AD0CA2B /* SwiftHEXColors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftHEXColors.debug.xcconfig; sourceTree = "<group>"; };
+		E04804C4F35F91320D56725B538E28D2 /* SwiftHEXColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftHEXColors-prefix.pch"; sourceTree = "<group>"; };
 		EF2FE8B5CDFE483F4C22E1B6E280063D /* Pods-TCG Sorter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TCG Sorter-dummy.m"; sourceTree = "<group>"; };
-		F0B0B407DF5AC8312A16311CC38E1839 /* URLBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLBuilder.swift; path = MTGSDKSwift/URLBuilder.swift; sourceTree = "<group>"; };
-		F109DD245C5E5D81970F5F85654A104E /* SearchParameter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SearchParameter.swift; path = MTGSDKSwift/Models/SearchParameter.swift; sourceTree = "<group>"; };
 		F902B2E372005A249A68B9F2BFBF1489 /* libSwiftHEXColors.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSwiftHEXColors.a; path = libSwiftHEXColors.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA68AE5F92C5EBF9B4EC8A9AE0D5AA57 /* MTGSDKSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MTGSDKSwift-umbrella.h"; sourceTree = "<group>"; };
-		FD972F2BDD3C11F1C81FC421CC7E0058 /* SwiftHEXColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftHEXColors-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3EDCF9061E4FE7399B70599F921D0ADF /* Frameworks */ = {
+		11808422634275A9A206EB3CD1BBFDC5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -93,48 +59,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C448FA04B87B6406A3773A6EE56D7CF5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2AD65E0676A0E856BDAFD6C9A2FF7188 /* SwiftHEXColors */ = {
+		522F2BD7FD46A617163E9E44A2B198B8 /* SwiftHEXColors */ = {
 			isa = PBXGroup;
 			children = (
-				7202AE0060CFEE3641E47333079F007A /* SwiftHEXColors.swift */,
-				D21DA7D00B5B0A5F738752ABBBAAE668 /* Support Files */,
+				43301AA5719D757CFEB0CB28A698EAEC /* SwiftHEXColors.swift */,
+				66ADE03C3135E4FCB1B486F7BE3F6847 /* Support Files */,
 			);
 			name = SwiftHEXColors;
 			path = SwiftHEXColors;
 			sourceTree = "<group>";
 		};
-		434E2B5395E074B2CF8E66A7568CF259 /* Products */ = {
+		66ADE03C3135E4FCB1B486F7BE3F6847 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				780B395A7A5D5048E84D3C9D73656E0C /* libMTGSDKSwift.a */,
+				6E52930EAD61DF561F169D1E223C880F /* SwiftHEXColors.modulemap */,
+				B382B89DA82BEB7942AB656A360868A0 /* SwiftHEXColors-dummy.m */,
+				E04804C4F35F91320D56725B538E28D2 /* SwiftHEXColors-prefix.pch */,
+				CD1AAEFE734368A80D06E003C1565F06 /* SwiftHEXColors-umbrella.h */,
+				DE6DCAA27D0E00D37D8A4ABF7AD0CA2B /* SwiftHEXColors.debug.xcconfig */,
+				629645FB8764F7375442C781A33F1DF0 /* SwiftHEXColors.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftHEXColors";
+			sourceTree = "<group>";
+		};
+		859230D42FD4C88778FDA54A34E9A103 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				522F2BD7FD46A617163E9E44A2B198B8 /* SwiftHEXColors */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		97A6F20D694A0ECA18746F18727589DB /* Products */ = {
+			isa = PBXGroup;
+			children = (
 				DD500B7290B0BC77222FABF12BC3C528 /* libPods-TCG Sorter.a */,
 				F902B2E372005A249A68B9F2BFBF1489 /* libSwiftHEXColors.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		7B58F92354D29EA45FAA5EB7EEF439CB /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9C4D0BDDEB1B6D2D489DF9AF0D7FCD19 /* MTGSDKSwift.modulemap */,
-				C21252F8B774D6EAC1E0E157F8A36265 /* MTGSDKSwift-dummy.m */,
-				16B5682748B38EECF5532E95BD8BEB7B /* MTGSDKSwift-prefix.pch */,
-				FA68AE5F92C5EBF9B4EC8A9AE0D5AA57 /* MTGSDKSwift-umbrella.h */,
-				43528ECE2ABB6CA7759477F79B86008A /* MTGSDKSwift.debug.xcconfig */,
-				9F1A722B6C67EDDF589CAD52E74EC4FC /* MTGSDKSwift.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MTGSDKSwift";
 			sourceTree = "<group>";
 		};
 		C732E71189F5F68539E88BBEDF55710B /* Pods-TCG Sorter */ = {
@@ -157,24 +123,10 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D89477F20FB1DE18A04690586D7808C4 /* Frameworks */,
-				DCAAEBF9FA35363F86C4D8C6E0311474 /* Pods */,
-				434E2B5395E074B2CF8E66A7568CF259 /* Products */,
+				859230D42FD4C88778FDA54A34E9A103 /* Pods */,
+				97A6F20D694A0ECA18746F18727589DB /* Products */,
 				EAECB154B9B1BB067667F285B4CA9353 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D21DA7D00B5B0A5F738752ABBBAAE668 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6B69A2912825D466A442CF511C73AAE5 /* SwiftHEXColors.modulemap */,
-				DEF99C0734F983FAB61B9E851DED301D /* SwiftHEXColors-dummy.m */,
-				FD972F2BDD3C11F1C81FC421CC7E0058 /* SwiftHEXColors-prefix.pch */,
-				EE1C8EC87C2CD1E8F698B72D3BD8CF1E /* SwiftHEXColors-umbrella.h */,
-				82542A482BA9A5A245A197D81AB4F9B3 /* SwiftHEXColors.debug.xcconfig */,
-				CD4B4C41971AFD6DAF6231CB085F347F /* SwiftHEXColors.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftHEXColors";
 			sourceTree = "<group>";
 		};
 		D89477F20FB1DE18A04690586D7808C4 /* Frameworks */ = {
@@ -182,33 +134,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DC7E18977EFB6768A9D4388DE40D9809 /* MTGSDKSwift */ = {
-			isa = PBXGroup;
-			children = (
-				942187F3C73FA4965B60C688ACDC3B75 /* Card.swift */,
-				CCC6C048451E1426412F48251AADC2FD /* CardSet.swift */,
-				E09F935BE883D018B5114F8D607D617B /* Constants.swift */,
-				DE481A0B55061D4697706CA977D5B52D /* MagicalCardManager.swift */,
-				66D541DAC3937617F5DBF8B8088F0187 /* MTGAPIService.swift */,
-				A230E77AC8944EBC80774F55EC9ABD95 /* MTGSearchConfiguration.swift */,
-				AFABEE4B9B5447EDB643B979D0A1D9D1 /* NetworkError.swift */,
-				F109DD245C5E5D81970F5F85654A104E /* SearchParameter.swift */,
-				F0B0B407DF5AC8312A16311CC38E1839 /* URLBuilder.swift */,
-				7B58F92354D29EA45FAA5EB7EEF439CB /* Support Files */,
-			);
-			name = MTGSDKSwift;
-			path = MTGSDKSwift;
-			sourceTree = "<group>";
-		};
-		DCAAEBF9FA35363F86C4D8C6E0311474 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DC7E18977EFB6768A9D4388DE40D9809 /* MTGSDKSwift */,
-				2AD65E0676A0E856BDAFD6C9A2FF7188 /* SwiftHEXColors */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		EAECB154B9B1BB067667F285B4CA9353 /* Targets Support Files */ = {
@@ -222,19 +147,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		740C77EBC3E59E81E016001B71EDBF69 /* Headers */ = {
+		B4A072D569AF4E634A28B8C9D7455512 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11BA863EFACA98B24A7815D22DCC7C4B /* Pods-TCG Sorter-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EF5F5DA34667822745BB5F6E2D34EBE9 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				49298E1CE77C23BD432C2CA24F8A32B0 /* MTGSDKSwift-umbrella.h in Headers */,
+				6DB4F8153944F2BFE5D750B36BC4FF2B /* Pods-TCG Sorter-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,37 +166,18 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BBA5459258F5ED721B7DD7457FE66D2D /* MTGSDKSwift */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C3DBFEA1EABFBD55D483069A2E4084A5 /* Build configuration list for PBXNativeTarget "MTGSDKSwift" */;
-			buildPhases = (
-				EF5F5DA34667822745BB5F6E2D34EBE9 /* Headers */,
-				01E5D5F0FE05B33E51EC80A37B9BC4DA /* Sources */,
-				3EDCF9061E4FE7399B70599F921D0ADF /* Frameworks */,
-				7DB27F6D13C102E01636F0D8918371A0 /* Copy generated compatibility header */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = MTGSDKSwift;
-			productName = MTGSDKSwift;
-			productReference = 780B395A7A5D5048E84D3C9D73656E0C /* libMTGSDKSwift.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		D5DDE8711BA2F760184118D63C278976 /* Pods-TCG Sorter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F06D4DD877EDC028B3A778DD7B69D52 /* Build configuration list for PBXNativeTarget "Pods-TCG Sorter" */;
+			buildConfigurationList = 695274A110E29F8ADC8EC1C4901CC3A7 /* Build configuration list for PBXNativeTarget "Pods-TCG Sorter" */;
 			buildPhases = (
-				740C77EBC3E59E81E016001B71EDBF69 /* Headers */,
-				7905067E520FBD42303ABFA6BE59FDBA /* Sources */,
-				C448FA04B87B6406A3773A6EE56D7CF5 /* Frameworks */,
+				B4A072D569AF4E634A28B8C9D7455512 /* Headers */,
+				B767FBD66A57BD9677ECA49E8DE2351F /* Sources */,
+				11808422634275A9A206EB3CD1BBFDC5 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				74D39D2EE37A97147DD138C6BB413EED /* PBXTargetDependency */,
-				AEE312B5B6A7E4B79DDD5EE77D55F560 /* PBXTargetDependency */,
+				D0D21E683E208F410C687B883E591D0C /* PBXTargetDependency */,
 			);
 			name = "Pods-TCG Sorter";
 			productName = "Pods-TCG Sorter";
@@ -310,11 +208,11 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -322,11 +220,10 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 434E2B5395E074B2CF8E66A7568CF259 /* Products */;
+			productRefGroup = 97A6F20D694A0ECA18746F18727589DB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BBA5459258F5ED721B7DD7457FE66D2D /* MTGSDKSwift */,
 				D5DDE8711BA2F760184118D63C278976 /* Pods-TCG Sorter */,
 				FBCA5614C6DE80E95DB0A68DF224D729 /* SwiftHEXColors */,
 			);
@@ -358,92 +255,44 @@
 			shellPath = /bin/sh;
 			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftHEXColors/SwiftHEXColors.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftHEXColors/SwiftHEXColors-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
 		};
-		7DB27F6D13C102E01636F0D8918371A0 /* Copy generated compatibility header */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
-				"${PODS_ROOT}/Headers/Public/MTGSDKSwift/MTGSDKSwift.modulemap",
-				"${PODS_ROOT}/Headers/Public/MTGSDKSwift/MTGSDKSwift-umbrella.h",
-			);
-			name = "Copy generated compatibility header";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
-				"${BUILT_PRODUCTS_DIR}/MTGSDKSwift-umbrella.h",
-				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/MTGSDKSwift/MTGSDKSwift.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/MTGSDKSwift/MTGSDKSwift-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		01E5D5F0FE05B33E51EC80A37B9BC4DA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				83EE030A0E7D608D38FAC9A504A8D6BD /* Card.swift in Sources */,
-				1ED5A324D160CE66EBD23B5F174099BF /* CardSet.swift in Sources */,
-				9D25F87D4EC0EF1BED1310EADD957931 /* Constants.swift in Sources */,
-				E9AAC6DBC72BD9F497552820CE92D549 /* MagicalCardManager.swift in Sources */,
-				486A87C5F6D4054966879A7128D9B9CA /* MTGAPIService.swift in Sources */,
-				92DE138393F03DB42389F1E9F387B026 /* MTGSDKSwift-dummy.m in Sources */,
-				4A2615A9B4B8E082A0E5E263F7088685 /* MTGSearchConfiguration.swift in Sources */,
-				EC7173206C5A405532B91929B0E99BC4 /* NetworkError.swift in Sources */,
-				219D44363BE87A91805FBB8D98589EE6 /* SearchParameter.swift in Sources */,
-				D26188E325C079F0FE95B75F830F510A /* URLBuilder.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7905067E520FBD42303ABFA6BE59FDBA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7EE1D536C14AE542ADFAD2AF9B0C37CC /* Pods-TCG Sorter-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8960EACFF1418A89F9786D534144849F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AC7CC78C7F246C1BF4D435860380158 /* SwiftHEXColors-dummy.m in Sources */,
 				448C4FFDA8F0324AA4E434A273E62F97 /* SwiftHEXColors.swift in Sources */,
+				2AC7CC78C7F246C1BF4D435860380158 /* SwiftHEXColors-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B767FBD66A57BD9677ECA49E8DE2351F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFE17EF062991F5BF0F0763025E020B8 /* Pods-TCG Sorter-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		74D39D2EE37A97147DD138C6BB413EED /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MTGSDKSwift;
-			target = BBA5459258F5ED721B7DD7457FE66D2D /* MTGSDKSwift */;
-			targetProxy = 1EE9AE0B835AEB5432A77B0B933BBCDE /* PBXContainerItemProxy */;
-		};
-		AEE312B5B6A7E4B79DDD5EE77D55F560 /* PBXTargetDependency */ = {
+		D0D21E683E208F410C687B883E591D0C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftHEXColors;
 			target = FBCA5614C6DE80E95DB0A68DF224D729 /* SwiftHEXColors */;
-			targetProxy = 01365C9548D68F9EF6E945072F94423A /* PBXContainerItemProxy */;
+			targetProxy = DC80BBC55D61C9A816D0B9E09ECE363E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0D6D717AA757D057F0ECF5D55ADC97E5 /* Release */ = {
+		4E924B3675C1D62FDEB1FD668B48A458 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BEBCEF8662E990EBAE2653AD1EAA8E64 /* Pods-TCG Sorter.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -461,11 +310,57 @@
 			};
 			name = Release;
 		};
-		1D427D8EB1EAA095ADD6D510F74B7BA3 /* Debug */ = {
+		55BC9D9A07C513D9BD373B13884B5E41 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 82542A482BA9A5A245A197D81AB4F9B3 /* SwiftHEXColors.debug.xcconfig */;
+			baseConfigurationReference = 8F11822DBB7B01777292D241046A91DC /* Pods-TCG Sorter.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TCG Sorter/Pods-TCG Sorter.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9BDD28E87C1EE3ABCC751033CEFAD2ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 629645FB8764F7375442C781A33F1DF0 /* SwiftHEXColors.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftHEXColors/SwiftHEXColors-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MODULEMAP_FILE = Headers/Public/SwiftHEXColors/SwiftHEXColors.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwiftHEXColors;
+				PRODUCT_NAME = SwiftHEXColors;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A27BAE96FE3DF1786D882669C5755983 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE6DCAA27D0E00D37D8A4ABF7AD0CA2B /* SwiftHEXColors.debug.xcconfig */;
+			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -486,57 +381,7 @@
 			};
 			name = Debug;
 		};
-		31E8614FDC8F277DBF388FB35D43D528 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F1A722B6C67EDDF589CAD52E74EC4FC /* MTGSDKSwift.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/MTGSDKSwift/MTGSDKSwift-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				MODULEMAP_FILE = Headers/Public/MTGSDKSwift/MTGSDKSwift.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = MTGSDKSwift;
-				PRODUCT_NAME = MTGSDKSwift;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		378309385F6831AC66E7AA991EBD0AC4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F11822DBB7B01777292D241046A91DC /* Pods-TCG Sorter.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TCG Sorter/Pods-TCG Sorter.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		8A3650F6C8AC2EFFA814EA61C37468B1 /* Debug */ = {
+		EAD0866E91F91D1A1842C8BEE2BF43A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -562,6 +407,68 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		FBC00D549F0F93309F421C94639D1F1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -600,126 +507,14 @@
 			};
 			name = Debug;
 		};
-		A009EE519448403DF85FFFF3B8395B06 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 43528ECE2ABB6CA7759477F79B86008A /* MTGSDKSwift.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/MTGSDKSwift/MTGSDKSwift-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				MODULEMAP_FILE = Headers/Public/MTGSDKSwift/MTGSDKSwift.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = MTGSDKSwift;
-				PRODUCT_NAME = MTGSDKSwift;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.1;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		AF1F8D2941B0228930706FA0F2C9BB78 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		B577F0CAF450B2A84C8A1EBC32BF86AE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD4B4C41971AFD6DAF6231CB085F347F /* SwiftHEXColors.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftHEXColors/SwiftHEXColors-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MODULEMAP_FILE = Headers/Public/SwiftHEXColors/SwiftHEXColors.modulemap;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_MODULE_NAME = SwiftHEXColors;
-				PRODUCT_NAME = SwiftHEXColors;
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8A3650F6C8AC2EFFA814EA61C37468B1 /* Debug */,
-				AF1F8D2941B0228930706FA0F2C9BB78 /* Release */,
+				FBC00D549F0F93309F421C94639D1F1B /* Debug */,
+				EAD0866E91F91D1A1842C8BEE2BF43A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -727,26 +522,17 @@
 		574BBD9F124AACCF46D0EFC8057C1A1C /* Build configuration list for PBXNativeTarget "SwiftHEXColors" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D427D8EB1EAA095ADD6D510F74B7BA3 /* Debug */,
-				B577F0CAF450B2A84C8A1EBC32BF86AE /* Release */,
+				A27BAE96FE3DF1786D882669C5755983 /* Debug */,
+				9BDD28E87C1EE3ABCC751033CEFAD2ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5F06D4DD877EDC028B3A778DD7B69D52 /* Build configuration list for PBXNativeTarget "Pods-TCG Sorter" */ = {
+		695274A110E29F8ADC8EC1C4901CC3A7 /* Build configuration list for PBXNativeTarget "Pods-TCG Sorter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				378309385F6831AC66E7AA991EBD0AC4 /* Debug */,
-				0D6D717AA757D057F0ECF5D55ADC97E5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C3DBFEA1EABFBD55D483069A2E4084A5 /* Build configuration list for PBXNativeTarget "MTGSDKSwift" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A009EE519448403DF85FFFF3B8395B06 /* Debug */,
-				31E8614FDC8F277DBF388FB35D43D528 /* Release */,
+				55BC9D9A07C513D9BD373B13884B5E41 /* Debug */,
+				4E924B3675C1D62FDEB1FD668B48A458 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,17 +6,12 @@
 //
 
 import SwiftUI
-import MTGSDKSwift
+import ScryfallKit
 
 /// This list is for pre-existing card lists such as a "deck" or a box.
 /// A very similar list view will be used for searching. This is just for local
 struct MTGCardListView: View {
   
-  init(manager: MTGManager) {
-    self.cardManager = manager
-  }
-  
-  var cardManager: MTGManager
   @State var cardList: [Card] = MTGCardListItem_Previews.testData
 
   var filteredCardList: [Card] {
@@ -32,37 +27,50 @@ struct MTGCardListView: View {
     var totalList = cardList
     // Loop through filters the user has input
      for filterType in filterViewModel.activeFilters {
-      switch CardSearchParameter.CardQueryParameterType(rawValue: filterType.name) {
-        case .name:
-          totalList = totalList.filter { $0.name?.contains(filterType.value) ?? false }
-        case .cmc:
+      switch filterType {
+        case .name(let name):
+          totalList = totalList.filter { $0.name.contains(name) }
+        case .cmc(let cmc, let comparisonType):
           // TODO: Support ranges, start with equal only
-          guard let filteredCMC = Int(filterType.value) else { break }
-          totalList = totalList.filter { $0.cmc == filteredCMC }
-        case .colors:
+          guard let filteredCMC = Double(cmc) else { break }
+          totalList = totalList.filter {
+            switch comparisonType {
+              case .equal: return $0.cmc == filteredCMC
+              case .greaterThanOrEqual: return $0.cmc >= filteredCMC
+              case .greaterThan: return $0.cmc > filteredCMC
+              case .lessThan: return $0.cmc < filteredCMC
+              case .lessThanOrEqual: return $0.cmc <= filteredCMC
+              case .notEqual: return $0.cmc != filteredCMC
+              default:
+                return false
+            }
+          }
+        case .colors(let colors, _):
           // TODO: Support subsets and exact matches, start with exact match for now
-          let colors = filterType.value.components(separatedBy: ",").sorted()
+          let colors = colors.components(separatedBy: ",").sorted().compactMap { Card.Color(rawValue: $0) }
           guard !colors.isEmpty else { break }
-          totalList = totalList.filter { $0.colors?.sorted() == colors }
-        case .supertypes:
+          totalList = totalList.filter {
+            var passes = true
+            for color in $0.colors ?? [] {
+              if !colors.contains(color) { passes = false }
+            }
+            return passes
+          }
+        case .type(let type):
           // TODO: Should we allow partial matches per word?
-          let searchTypes = Set<String>(filterType.value.components(separatedBy: " "))
-          totalList = totalList.filter { searchTypes.isSubset(of: $0.supertypes ?? []) }
-        case .subtypes:
-          // TODO: Should we allow partial matches per word?
-          let searchTypes = Set<String>(filterType.value.components(separatedBy: " "))
-          totalList = totalList.filter { searchTypes.isSubset(of: $0.subtypes ?? []) }
-        case .rarity:
-          totalList = totalList.filter { $0.rarity == filterType.value }
-        case .text:
+          let searchTypes = Set<String>(type.replacingOccurrences(of: "-", with: "").components(separatedBy: " "))
+          totalList = totalList.filter { searchTypes.isSubset(of: Set<String>($0.typeLine?.replacingOccurrences(of: "-", with: "").components(separatedBy: " ") ?? [])) }
+        case .rarity(let rarity, _):
+          totalList = totalList.filter { $0.rarity.rawValue == rarity }
+        case .oracleText(let text):
           // TODO: More general search. Now it's just a substring
-          totalList = totalList.filter { $0.text?.contains(filterType.value) ?? false }
-        case .set:
-          totalList = totalList.filter { $0.set == filterType.value }
-        case .power:
-          totalList = totalList.filter { $0.power == filterType.value }
-        case .toughness:
-          totalList = totalList.filter { $0.toughness == filterType.value }
+          totalList = totalList.filter { $0.oracleText?.contains(text) ?? false }
+        case .set(let set):
+          totalList = totalList.filter { $0.set == set }
+        case .power(let power, _):
+          totalList = totalList.filter { $0.power == power }
+        case .toughness(let toughness, _):
+          totalList = totalList.filter { $0.toughness == toughness }
         default:
           break
       }
@@ -101,37 +109,10 @@ struct MTGCardListView: View {
   }
 }
 
-class PreviewManager: MTGManager {
-  var page = 1
-  
-  func fetchBy(search activeFilters: [CardSearchParameter], completion: @escaping Magic.CardCompletion) {
-    return
-  }
-  
-  func fetchImage(for card: Card, completion: @escaping Magic.CardImageCompletion) {
-    return
-  }
-  
-
-  func fetchAll(completion: @escaping Magic.CardCompletion) {
-    let cards = MTGCardListItem_Previews.testData
-    completion(.success(cards))
-  }
-
-}
-
 struct MTGCardListView_Previews: PreviewProvider {
   static func setUpPreview() -> some View {
-    let previewManager = PreviewManager()
-    let list = MTGCardListView(manager: previewManager)
-    previewManager.fetchAll { result in
-      switch result {
-        case .success(let cards):
-          list.cardList = cards
-        case .error:
-          break
-      }
-    }
+    let list = MTGCardListView()
+    list.cardList = MTGCardListItem_Previews.testData
     return list
   }
     static var previews: some View {

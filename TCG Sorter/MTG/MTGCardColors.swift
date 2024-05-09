@@ -6,27 +6,27 @@
 //
 
 import Foundation
-import MTGSDKSwift
+import ScryfallKit
 import SwiftHEXColors
 
 enum MTGColor: Equatable {
   case white, blue, black, red, green, none, multi
   
-  static func color(from colors: [String]) -> MTGColor {
+  static func color(from colors: [ScryfallKit.Card.Color]) -> MTGColor {
     switch colors.count {
       case 1:
         // Count over zero, should never be nil
         guard let identity = colors.first else { return .none}
-        switch identity.lowercased() {
-          case "white":
+        switch identity {
+          case .W:
             return .white
-          case "blue":
+          case .U:
             return .blue
-          case "black":
+          case .B:
             return .black
-          case "red":
+          case .R:
             return .red
-          case "green":
+          case .G:
             return .green
           default:
             return .none
@@ -42,7 +42,7 @@ enum MTGColor: Equatable {
 extension Card {
   // Enum representation of color identity (including rules text)
   var mtgColorIdentity: MTGColor {
-    MTGColor.color(from: colorIdentity ?? [])
+    MTGColor.color(from: colorIdentity)
   }
   
   // Enum representation of casting cost

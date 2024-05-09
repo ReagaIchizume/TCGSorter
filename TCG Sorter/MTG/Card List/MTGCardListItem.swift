@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import MTGSDKSwift
+import ScryfallKit
 
 struct MTGCardListItem: View {
   
@@ -15,8 +15,8 @@ struct MTGCardListItem: View {
   var body: some View {
     HStack {
       VStack(alignment: .leading) {
-        Text(card.name ?? "").foregroundColor(Color(.mtgTextColor))
-        Text(card.type ?? "").foregroundColor(Color( .mtgTextColor))
+        Text(card.name).foregroundColor(Color(.mtgTextColor))
+        Text(card.typeLine ?? "").foregroundColor(Color( .mtgTextColor))
       }
       Spacer()
       Text(card.manaCost ?? "").foregroundColor(Color(.mtgTextColor))
@@ -28,13 +28,13 @@ struct MTGCardListItem: View {
 struct MTGCardListItem_Previews: PreviewProvider {
   static var testData: [Card] {
     return [
-      Card(name: "Test White", type: "Creature - Human Soldier", manaCost: "1W", colors: ["white"]),
-      Card(name: "Test Blue", type: "Sorcery", manaCost: "3UU", colors: ["blue"]),
-      Card(name: "Test Black", type: "Instant", manaCost: "B", colors: ["black"]),
-      Card(name: "Test Red", type: "Planeswalker - Test", manaCost: "6R", colors: ["red"]),
-      Card(name: "Test Green", type: "Creature - Behemoth", manaCost: "8GG", colors: ["green"]),
+      Card(name: "Test White", type: "Creature - Human Soldier", manaCost: "1W", colors: [.W]),
+      Card(name: "Test Blue", type: "Sorcery", manaCost: "3UU", colors: [.U]),
+      Card(name: "Test Black", type: "Instant", manaCost: "B", colors: [.B]),
+      Card(name: "Test Red", type: "Planeswalker - Test", manaCost: "6R", colors: [.R]),
+      Card(name: "Test Green", type: "Creature - Behemoth", manaCost: "8GG", colors: [.G]),
       Card(name: "Test Void", type: "Artifact - Equipment", manaCost: "7"),
-      Card(name: "Test Multicolored", type: "Enchantment", manaCost: "WUBRG", colors: ["white", "blue", "black", "red", "green"]),
+      Card(name: "Test Multicolored", type: "Enchantment", manaCost: "WUBRG", colors: [.W, .U, .B, .R, .G]),
       Card(name: "Test Land", type: "Basic Land - Mountain", manaCost: "")
     ]
   }
