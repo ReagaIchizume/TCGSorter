@@ -45,13 +45,13 @@ struct MTGCardListView: View {
                 return false
             }
           }
-        case .colors(let colors, _):
+        case .colorIdentity(let colors, _):
           // TODO: Support subsets and exact matches, start with exact match for now
           let colors = colors.components(separatedBy: ",").sorted().compactMap { Card.Color(rawValue: $0) }
           guard !colors.isEmpty else { break }
           totalList = totalList.filter {
             var passes = true
-            for color in $0.colors ?? [] {
+            for color in $0.colorIdentity {
               if !colors.contains(color) { passes = false }
             }
             return passes

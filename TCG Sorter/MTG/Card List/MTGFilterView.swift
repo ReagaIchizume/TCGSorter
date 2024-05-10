@@ -74,7 +74,7 @@ class MTGFilterViewModel: ObservableObject {
     [
       .name(filteredName),
       .cmc(filteredCMC, .equal),
-      .colors(filteredColors, ComparisonType.including),
+      .colorIdentity(filteredColors, ComparisonType.lessThanOrEqual),
       .type(filteredTypes),
       .fullOracleText(filteredText),
       .rarity(filteredRarity, .equal),
@@ -93,8 +93,11 @@ class MTGFilterViewModel: ObservableObject {
           nonNilFilters.append(filter)
         case .cmc(let cmc, _) where !cmc.isEmpty:
           nonNilFilters.append(filter)
-        case .colors(let colors, _) where !colors.isEmpty:
+        case .colorIdentity(let colors, _) where !colors.isEmpty:
           nonNilFilters.append(filter)
+          if colors != Card.Color.C.rawValue {
+            nonNilFilters.append(.colorIdentity(Card.Color.C.rawValue, .notEqual))
+          }
         case .type(let type) where !type.isEmpty:
           nonNilFilters.append(filter)
         case .fullOracleText(let text) where !text.isEmpty:
@@ -141,75 +144,83 @@ struct MTGFilterView: View {
           Spacer()
           Toggle(Card.Color.W.rawValue, isOn: $viewModel.whiteChecked).toggleStyle(CheckBoxToggleStyle())
             .onChange(of: viewModel.whiteChecked, perform: { whiteChecked in
-              if viewModel.colorlessChecked {
-                viewModel.colorlessChecked = false
-              }
+              let white = Card.Color.W.rawValue
               if whiteChecked {
-                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? "white" : ",white"
+                if viewModel.colorlessChecked {
+                  viewModel.colorlessChecked = false
+                }
+                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? white : ",\(white)"
               } else {
-                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",white", with: "")
-                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "white", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",\(white)", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: white, with: "")
               }
             })
           Toggle(Card.Color.U.rawValue, isOn: $viewModel.blueChecked).toggleStyle(CheckBoxToggleStyle())
             .onChange(of: viewModel.blueChecked, perform: { blueChecked in
-              if viewModel.colorlessChecked {
-                viewModel.colorlessChecked = false
-              }
+              let blue = Card.Color.U.rawValue
               if blueChecked {
-                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? "blue" : ",blue"
+                if viewModel.colorlessChecked {
+                  viewModel.colorlessChecked = false
+                }
+                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? blue : ",\(blue)"
               } else {
-                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",blue", with: "")
-                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "blue", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",\(blue)", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: blue, with: "")
               }
             })
           Toggle(Card.Color.B.rawValue, isOn: $viewModel.blackChecked).toggleStyle(CheckBoxToggleStyle())
             .onChange(of: viewModel.blackChecked, perform: { blackChecked in
-              if viewModel.colorlessChecked {
-                viewModel.colorlessChecked = false
-              }
+              let black = Card.Color.B.rawValue
               if blackChecked {
-                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? "black" : ",black"
+                if viewModel.colorlessChecked {
+                  viewModel.colorlessChecked = false
+                }
+                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? black : ",\(black)"
               } else {
-                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",black", with: "")
-                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "black", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",\(black)", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: black, with: "")
               }
             })
           Toggle(Card.Color.R.rawValue, isOn: $viewModel.redChecked).toggleStyle(CheckBoxToggleStyle())
             .onChange(of: viewModel.redChecked, perform: { redChecked in
-              if viewModel.colorlessChecked {
-                viewModel.colorlessChecked = false
-              }
+              let red = Card.Color.R.rawValue
               if redChecked {
-                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? "red" : ",red"
+                if viewModel.colorlessChecked {
+                  viewModel.colorlessChecked = false
+                }
+                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? red : ",\(red)"
               } else {
-                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",red", with: "")
-                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "red", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",\(red)", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: red, with: "")
               }
             })
           Toggle(Card.Color.G.rawValue, isOn: $viewModel.greenChecked).toggleStyle(CheckBoxToggleStyle())
             .onChange(of: viewModel.greenChecked, perform: { greenChecked in
-              if viewModel.colorlessChecked {
-                viewModel.colorlessChecked = false
-              }
+              let green = Card.Color.G.rawValue
               if greenChecked {
-                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? "green" : ",green"
+                if viewModel.colorlessChecked {
+                  viewModel.colorlessChecked = false
+                }
+                viewModel.filteredColors += viewModel.filteredColors.isEmpty ? green : ",\(green)"
               } else {
-                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: ",green", with: "")
-                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "green", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: "\(green)", with: "")
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: green, with: "")
               }
             })
           Toggle(Card.Color.C.rawValue, isOn: $viewModel.colorlessChecked).toggleStyle(CheckBoxToggleStyle())
             .onChange(of: viewModel.colorlessChecked, perform: { colorlessChecked in
+              let colorless = Card.Color.C.rawValue
               if colorlessChecked {
                 viewModel.whiteChecked = false
                 viewModel.blueChecked = false
                 viewModel.blackChecked = false
                 viewModel.redChecked = false
                 viewModel.greenChecked = false
-                viewModel.filteredColors = "colorless"
+                viewModel.filteredColors = colorless
               } else {
-                viewModel.filteredColors = ""
+                viewModel.filteredColors = viewModel.filteredColors.replacingOccurrences(of: colorless, with: "")
+                  .replacingOccurrences(of: ",\(colorless)", with: "")
+                  .replacingOccurrences(of: "\(colorless),", with: "")
               }
             })
           Spacer()

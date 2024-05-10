@@ -38,7 +38,7 @@ class MTGSearchModel: ObservableObject {
     if shouldResetSearch {
       resetSearch()
     }
-    cardManager.searchCards(filters: parameters, completion: cardsearchCompletion(result:))
+    cardManager.searchCards(filters: parameters, page: pageCount, completion: cardsearchCompletion(result:))
   }
 }
 
@@ -71,6 +71,12 @@ struct MTGCardSearchView: View {
               .listRowBackground(Color($0.cardColor))
               .listRowSeparator(.hidden)
           }
+          Rectangle()
+            .frame(width: 0, height: 0, alignment: .center)
+            .task {
+              searchModel.pageCount += 1
+              searchModel.search(parameters: filterViewModel.activeFilters, shouldResetSearch: false)
+            }
         }
       } else {
         ScrollView {
@@ -79,6 +85,12 @@ struct MTGCardSearchView: View {
               MTGCardListItem(card: $0)
                 .background(Color($0.cardColor))
             }
+            Rectangle()
+              .frame(width: 0, height: 0, alignment: .center)
+              .onAppear() {
+                searchModel.pageCount += 1
+                searchModel.search(parameters: filterViewModel.activeFilters, shouldResetSearch: false)
+              }
           }
         }
       }
