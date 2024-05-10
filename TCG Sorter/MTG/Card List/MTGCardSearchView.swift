@@ -30,10 +30,6 @@ class MTGSearchModel: ObservableObject {
     cardList.removeAll()
   }
 
-  init() {
-    cardManager.searchCards(filters: [], completion: cardsearchCompletion(result:))
-  }
-
   func search(parameters: [CardFieldFilter], shouldResetSearch: Bool) {
     if shouldResetSearch {
       resetSearch()
@@ -66,10 +62,12 @@ struct MTGCardSearchView: View {
       Spacer()
       if #available(iOS 15.0, *) {
         List {
-          ForEach(searchModel.cardList) {
-            MTGCardListItem(card: $0)
-              .listRowBackground(Color($0.cardColor))
-              .listRowSeparator(.hidden)
+          ForEach(searchModel.cardList) { card in
+            NavigationLink(destination: MTGCardDetailView(card: card)) {
+              MTGCardListItem(card: card)
+                .listRowBackground(Color(card.cardColor))
+                .listRowSeparator(.hidden)
+            }
           }
           Rectangle()
             .frame(width: 0, height: 0, alignment: .center)
@@ -81,10 +79,13 @@ struct MTGCardSearchView: View {
       } else {
         ScrollView {
           LazyVStack {
-            ForEach(searchModel.cardList) {
-              MTGCardListItem(card: $0)
-                .background(Color($0.cardColor))
+            ForEach(searchModel.cardList) { card in
+              NavigationLink(destination: MTGCardDetailView(card: card)) {
+                MTGCardListItem(card: card)
+                  .background(Color(card.cardColor))
+              }
             }
+            .padding(6)
             Rectangle()
               .frame(width: 0, height: 0, alignment: .center)
               .onAppear() {

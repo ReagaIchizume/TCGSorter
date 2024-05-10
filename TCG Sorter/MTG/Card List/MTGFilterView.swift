@@ -86,7 +86,7 @@ class MTGFilterViewModel: ObservableObject {
   
   /// Actual objects used by the query
   var activeFilters: [CardFieldFilter] {
-    var nonNilFilters: [CardFieldFilter] = []
+    var nonNilFilters: [CardFieldFilter] = [.game(.paper)]
     for filter in cardFilters {
       switch filter {
         case .name(let name) where !name.isEmpty:

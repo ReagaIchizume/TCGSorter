@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9273514F2BEBF9F400B98649 /* ScryfallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9273514E2BEBF9F400B98649 /* ScryfallKit */; };
+		927351522BEE526400B98649 /* MTGCardDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927351512BEE526400B98649 /* MTGCardDetailView.swift */; };
+		927351542BEE6F2200B98649 /* MTGCardActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927351532BEE6F2200B98649 /* MTGCardActionView.swift */; };
 		92BEE16327B2F39500A85920 /* TCG_SorterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE16227B2F39500A85920 /* TCG_SorterApp.swift */; };
 		92BEE16527B2F39500A85920 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE16427B2F39500A85920 /* ContentView.swift */; };
 		92BEE16727B2F39D00A85920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92BEE16627B2F39D00A85920 /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		7ADEAF63E4409486F13BA271 /* libPods-TCG Sorter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TCG Sorter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FFA7C33C7790C6FF6732483 /* Pods-TCG Sorter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TCG Sorter.release.xcconfig"; path = "Target Support Files/Pods-TCG Sorter/Pods-TCG Sorter.release.xcconfig"; sourceTree = "<group>"; };
+		927351512BEE526400B98649 /* MTGCardDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGCardDetailView.swift; sourceTree = "<group>"; };
+		927351532BEE6F2200B98649 /* MTGCardActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTGCardActionView.swift; sourceTree = "<group>"; };
 		92BEE15F27B2F39500A85920 /* TCG Sorter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TCG Sorter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92BEE16227B2F39500A85920 /* TCG_SorterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCG_SorterApp.swift; sourceTree = "<group>"; };
 		92BEE16427B2F39500A85920 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 				7ADEAF63E4409486F13BA271 /* libPods-TCG Sorter.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		927351502BEE521300B98649 /* CardDetails */ = {
+			isa = PBXGroup;
+			children = (
+				927351512BEE526400B98649 /* MTGCardDetailView.swift */,
+				927351532BEE6F2200B98649 /* MTGCardActionView.swift */,
+			);
+			path = CardDetails;
 			sourceTree = "<group>";
 		};
 		92BEE15627B2F39500A85920 = {
@@ -194,6 +207,7 @@
 		92BEE1A2284A44F500A85920 /* MTG */ = {
 			isa = PBXGroup;
 			children = (
+				927351502BEE521300B98649 /* CardDetails */,
 				92BEE1EA284A7ECF00A85920 /* Card List */,
 				92BEE1B9284A511A00A85920 /* MTGHomePage.swift */,
 				92BEE1DA284A67E000A85920 /* MTGCardColors.swift */,
@@ -390,10 +404,12 @@
 				92BEE16327B2F39500A85920 /* TCG_SorterApp.swift in Sources */,
 				92BEE1E6284A772E00A85920 /* Card+Extensions.swift in Sources */,
 				92BEE1AF284A47AF00A85920 /* TCG.swift in Sources */,
+				927351522BEE526400B98649 /* MTGCardDetailView.swift in Sources */,
 				92BEE1DB284A67E000A85920 /* MTGCardColors.swift in Sources */,
 				92BEE1BA284A511A00A85920 /* MTGHomePage.swift in Sources */,
 				92BEE1D6284A5F5500A85920 /* MTGCardListItem.swift in Sources */,
 				92BEE16F27B2F39D00A85920 /* TCG_Sorter.xcdatamodeld in Sources */,
+				927351542BEE6F2200B98649 /* MTGCardActionView.swift in Sources */,
 				92BEE1EC284A7EF800A85920 /* MTGFilterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
